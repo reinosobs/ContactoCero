@@ -17,11 +17,11 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    - **Mensaje**: Redes Sociales y metodos de contacto directo por correo electronico. 
 
 ### 4. Funcionalidades
-   - Generacion de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
-   - Cálculo de estadisticas a partir de datos consultados tras una rutina
-   - Seguimiento de realizacion de rutinas diarias.
+   - Generación de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
+   - Cálculo de estadísticas a partir de datos consultados tras una rutina
+   - Seguimiento de realización de rutinas diarias.
    - Consulta de usuarios registrados
-   - Generacion de rutinas automaticas a partir de parametros que nos facilita el usuario con posibilidad de descarga en formato PDF.
+   - Generación de rutinas automáticas a partir de parametros que nos facilita el usuario con posibilidad de descarga en formato PDF.
 ### 5. Integrantes
    * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / reinosobs
 
