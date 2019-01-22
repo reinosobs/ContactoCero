@@ -12,16 +12,16 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
 
    - **Rutina**: Conjunto de ejercicios que se recomienda a cada usuario dependiendo de sus objetivos.
 
-   - **Ejercicio**: Tarea individual especifica de cada grupo muscular que complementa a una o más rutinas.
+   - **Ejercicio**: Tarea individual específica de cada grupo muscular que complementa a una o más rutinas.
 
-   - **Mensaje**: Redes Sociales y metodos de contacto directo por correo electronico. 
+   - **Mensaje**: Redes Sociales y métodos de contacto directo por correo electrónico. 
 
 ### 4. Funcionalidades
    - Generación de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
    - Cálculo de estadísticas a partir de datos consultados tras una rutina
    - Seguimiento de realización de rutinas diarias.
    - Consulta de usuarios registrados
-   - Generación de rutinas automáticas a partir de parametros que nos facilita el usuario con posibilidad de descarga en formato PDF.
+   - Generación de rutinas automáticas a partir de parámetros que nos facilita el usuario con posibilidad de descarga en formato PDF.
 ### 5. Integrantes
    * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / reinosobs
 
