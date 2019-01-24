@@ -20,7 +20,6 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    - Generación de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
    - Cálculo de estadísticas a partir de datos consultados tras una rutina
    - Seguimiento de realización de rutinas diarias.
-   - Consulta de usuarios registrados
    - Generación de rutinas automáticas a partir de parámetros que nos facilita el usuario con posibilidad de descarga en formato PDF.
 ### 5. Integrantes
    * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / reinosobs
