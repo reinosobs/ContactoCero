@@ -22,8 +22,8 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    - Seguimiento de realización de rutinas diarias.
    - Generación de rutinas automáticas a partir de parámetros que nos facilita el usuario con posibilidad de descarga en formato PDF.
 ### 5. Integrantes
-   * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / reinosobs
+   * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / https://github.com/reinosobs
 
-   * David Palacios Moreno / d.palaciosm@alumnos.urjc.es / d-palaciosm
+   * David Palacios Moreno / d.palaciosm@alumnos.urjc.es / https://github.com/d-palaciosm
 
-   * Luis Santos Moreno / l.santosmor@alumnos.urjc.es / LuisitoSantos
+   * Luis Santos Moreno / l.santosmor@alumnos.urjc.es / https://github.com/LuisitoSantos
