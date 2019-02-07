@@ -13,14 +13,14 @@ body {
 	
 #main-header {
 	background: #333;
-	color:  white;
+	color: white;
 	height: 80px;
 }	
 	#main-header a {
 		color: white;
 	}
- 
-/*
+	
+	/*
  * Logo
  */
 #logo-header {
@@ -45,26 +45,23 @@ body {
 		font-size: 0.8em;
 		color: #999;
 	}
-#logo-titulo .titulo {
 	
-		float: left;
-		padding: 25px 0 0 345px;
-		display: block;
-		font-weight: 700;
-		font-size: 2.5em;
-		text-decoration: none;
+#logo-titulo .titulo {
+
+	float: left;
+	padding: 25px 0 0 345px;
+	display: block;
+	font-weight: 700;
+	font-size: 2.5em;
+	text-decoration: none;
 	}
 	#logo-titulo:hover {
 		color: #0b76a6;
 	}
 	
-	
- 
 /*
  * Navegación
  */
- 
-
 nav {
 	float: right;
 	}
@@ -97,9 +94,6 @@ nav {
 						#btn-contacto:hover {
 							color: #0b76a6;
 						}
-							
-
-
 
 #main-content {
 	margin: 0;
@@ -111,18 +105,3 @@ nav {
     background-size: cover;
     background-position: center;
 }
-	
-/*#main-footer {
-	background: #333;
-	color: white;
-	text-align: center;
-	padding: 20px;
-	margin-top: 40px;
-}
-	#main-footer p {
-		margin: 0;
-	}
-	
-	#main-footer a {
-		color: white;
-	}*/

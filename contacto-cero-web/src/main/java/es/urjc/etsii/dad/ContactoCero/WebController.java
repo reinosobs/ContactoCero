@@ -19,18 +19,29 @@ public class WebController {
 	public String login(ModelMap model, @RequestParam String name, @RequestParam String pass) {
 	 model.put("name", name);
 	 model.put("pass", pass);
-	 	if(name.equals(u.getNick())&& (pass.equals(u.getClave()))){
+	 	/*if(name.equals(u.getNick())&& (pass.equals(u.getClave()))){
 		 	return "mainPage";
 	 	}else {		 
 		 	return "errorLogin";
-		}
+		}*/
+	 	if(name!=null) {
+	 		return "mainPage";
+	 	}
+	 	else {
+	 		return "errorLoging";
+	 	}
 		}
 	
 	
 	
 	@RequestMapping("/mainPage")
 	public String perfil(ModelMap model) {
-		return "perfil";
+		return "ejercicios";
+	}
+	
+	@RequestMapping("/ejercicios")
+	public String ejercicios(ModelMap model) {
+		return "mainPage";
 	}
 }
 
