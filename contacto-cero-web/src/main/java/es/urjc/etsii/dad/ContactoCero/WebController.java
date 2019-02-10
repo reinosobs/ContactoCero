@@ -35,12 +35,23 @@ public class WebController {
 	
 	
 	@RequestMapping("/mainPage")
-	public String perfil(ModelMap model) {
+	public String perfil(ModelMap model) {//, @RequestParam String name) {
+		//model.addAttribute(name);
 		return "ejercicios";
 	}
 	
 	@RequestMapping("/ejercicios")
 	public String ejercicios(ModelMap model) {
+		return "rutinas";
+	}
+	
+	@RequestMapping("/rutinas")
+	public String rutinas(ModelMap model) {
+		return "contacto";
+	}
+	
+	@RequestMapping("/contacto")
+	public String contacto(ModelMap model) {
 		return "mainPage";
 	}
 }
