@@ -109,28 +109,45 @@ input[type="submit"]{
 	color: white;
 }
 
-#main-content {
+body {
 	margin: 0;
     padding: 5px;
     width: cover;
-    height: 567px;
     background: url("imagenes/fondo desenfocado.jpg");
     /*background-attachment: fixed;*/
     background-size: cover;
     background-position: center;
 }
-	
-/*#main-footer {
-	background: #333;
-	color: white;
-	text-align: center;
-	padding: 20px;
-	margin-top: 40px;
+
+
+/* Photo */
+
+
+
+ .details {
+    margin-top: 13px;
 }
-	#main-footer p {
-		margin: 0;
-	}
-	
-	#main-footer a {
-		color: white;
-	}*/
+
+/* Title */
+
+ .details h3 {
+    display: block;
+    font-size: 12px;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ .details h3 a{
+    color:  #303030;
+    text-decoration: none;
+}
+
+.details .image-author {
+    display: block;
+    color:  #717171;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0;
+}

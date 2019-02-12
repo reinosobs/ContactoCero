@@ -34,25 +34,25 @@ public class WebController {
 	
 	
 	
-	@RequestMapping("/mainPage")
+	@GetMapping("/mainPage")
 	public String perfil(ModelMap model) {//, @RequestParam String name) {
 		//model.addAttribute(name);
+		return "mainPage";
+	}
+	
+	@GetMapping("/ejercicios")
+	public String ejercicios(ModelMap model) {
 		return "ejercicios";
 	}
 	
-	@RequestMapping("/ejercicios")
-	public String ejercicios(ModelMap model) {
+	@GetMapping("/rutinas")
+	public String rutinas(ModelMap model) {
 		return "rutinas";
 	}
 	
-	@RequestMapping("/rutinas")
-	public String rutinas(ModelMap model) {
-		return "contacto";
-	}
-	
-	@RequestMapping("/contacto")
+	@GetMapping("/contacto")
 	public String contacto(ModelMap model) {
-		return "mainPage";
+		return "contacto";
 	}
 }
 
