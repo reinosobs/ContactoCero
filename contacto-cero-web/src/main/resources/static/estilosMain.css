@@ -84,9 +84,13 @@ nav {
 						
 					nav ul li a {
 						display: block;
-						padding: 0 10px;
+						padding: 5px 0 0 10px;
 						text-decoration: none;
-						
+						background: #333;
+						border: 0;
+						cursor: pointer;
+						font-size: 1.0em;
+						color: white;
 						}
 					
 						#btn-ejercicios:hover {
@@ -102,19 +106,11 @@ nav {
 							color: #0b76a6;
 						}
 
-input[type="submit"]{
-	background: #333;
-	border: 0;
-	cursor: pointer;
-	font-size: 1.0em;
-	color: white;
-}
-
 #main-content {
 	margin: 0;
     padding: 5px;
     width: cover;
-    height: 567px;
+    height: 750px;
     background: url("imagenes/fondo desenfocado.jpg");
     /*background-attachment: fixed;*/
     background-size: cover;
@@ -129,19 +125,3 @@ input[type="submit"]{
 		font-size: 1.2em;
 		line-height: 3em;
 		}
-	
-	
-/*#main-footer {
-	background: #333;
-	color: white;
-	text-align: center;
-	padding: 20px;
-	margin-top: 40px;
-}
-	#main-footer p {
-		margin: 0;
-	}
-	
-	#main-footer a {
-		color: white;
-	}*/
