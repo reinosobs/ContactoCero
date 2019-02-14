@@ -13,8 +13,10 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    - **Rutina**: Conjunto de ejercicios que se recomienda a cada usuario dependiendo de sus objetivos.
 
    - **Ejercicio**: Tarea individual específica de cada grupo muscular que complementa a una o más rutinas.
+   
+   - **Dietas**: Distintos tipos de dietas acordes a lo que desea el usuario.
 
-   - **Mensaje**: Redes Sociales y métodos de contacto directo por correo electrónico. 
+   - **Contacto**: Redes Sociales y métodos de contacto directo por correo electrónico. 
 
 ### 4. Funcionalidades
    - Generación de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
