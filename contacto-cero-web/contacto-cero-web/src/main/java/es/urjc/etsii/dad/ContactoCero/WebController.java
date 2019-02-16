@@ -15,21 +15,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class WebController {
 	Usuario u= new Usuario("Luis", "1234");
-	@RequestMapping("/login2")
-	public String login(ModelMap model, @RequestParam String name, @RequestParam String pass) {
+	@GetMapping("/login2")
+	/*public String login(ModelMap model, @RequestParam String name, @RequestParam String pass) {
 	 model.put("name", name);
-	 model.put("pass", pass);
+	 model.put("pass", pass);*/
 	 	/*if(name.equals(u.getNick())&& (pass.equals(u.getClave()))){
 		 	return "mainPage";
 	 	}else {		 
 		 	return "errorLogin";
 		}*/
-	 	if(name!=null) {
+	public String login(ModelMap model) {
+
 	 		return "mainPage";
-	 	}
-	 	else {
-	 		return "errorLoging";
-	 	}
 		}
 	
 	
