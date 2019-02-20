@@ -36,3 +36,10 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
 ![login](https://user-images.githubusercontent.com/45769039/53116616-5ebf7080-3549-11e9-9fab-161a98a9f7c3.PNG)
 
 Página para hacer login y entrar en la web del gimnasio.
+
+![registro](https://user-images.githubusercontent.com/45769039/53116808-d392aa80-3549-11e9-8c80-a4397ace3230.png)
+
+Página para registrarse en el caso de no poseer una cuenta.
+
+
+
