@@ -71,3 +71,7 @@ Diagrama de navegación
 ![e-r fase2](https://user-images.githubusercontent.com/45769039/53118308-199d3d80-354d-11e9-9b59-a6771a59d262.JPG)
 
 Diagrama E/R
+
+![uml](https://user-images.githubusercontent.com/45769039/53121245-12c5f900-3554-11e9-89d0-4cd17b4c08b5.png)
+
+Diagrama UML
