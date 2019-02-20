@@ -27,6 +27,7 @@
 				<li><a href="mainPage">Perfil<id="btn-ejercicios" type="submit" value="Perfil"><p></p></a></li>
 				<li><a href="ejercicios">Ejercicios <id ="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
 				<li><a><p>Rutinas</p></a></li>
+				<li><a href="dietas">Dietas<id="btn-dietas"  type="submit" value="Dietas"></a></li>
 				<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"><p></p></a></li>
 
 			</ul>
@@ -36,12 +37,32 @@
 	
 	<main id="main-content">
 			<ul id="forma-rutinas" href="#" class="article-list-vertical">
+			
+		<div class="ventana" id="vent">
+			<div id="cerrar"> <a href="javascript:cerrar()"><img src="imagenes/cancel.png"></a></div>
+				<p>RUTINA DE DEFINICIÓN</p>
+			
+		</div>
+		
+		<div class="ventana2" id="vent2">
+			<div id="cerrar"> <a href="javascript:cerrar2()"><img src="imagenes/cancel.png"></a></div>
+				<p>RUTINA DE VOLUMEN</p>
+			
+		</div>
+		
+		<div class="ventana3" id="vent3">
+			<div id="cerrar"> <a href="javascript:cerrar3()"><img src="imagenes/cancel.png"></a></div>
+				<p>RUTINA DE PÉRDIDA DE PESO</p>
+			
+		</div>
+
 
         <li>
             <a href="#" style="background-image: url('https://www.cambiatufisico.com/wp-content/uploads/definicion-musculos.jpg')"></a>
             <div>
                 <h2><a href="#">Rutina definición</a></h2>
                 <p>Esta rutina se basa en la realización de muchas repeticiones por serie con poco peso</p>
+                <a class="read-more" href="javascript:abrir()">Ver rutina →</a>
                 <a class="read-more" href="#">Añadir a tus rutinas →</a>
             </div>
         </li>
@@ -50,6 +71,7 @@
             <div>
                 <h2><a href="#">Rutina volumen</a></h2>
                 <p>Esta rutina se basa en la realización de pocas repeticiones por serie con mucho peso</p>
+                <a class="read-more" href="javascript:abrir2()">Ver rutina →</a>
                 <a class="read-more" href="#">Añadir a tus rutinas →</a>
             </div>
         </li>
@@ -58,12 +80,51 @@
             <div>
                 <h2><a href="#">Rutina perdida de peso</a></h2>
                 <p>Esta rutina se basa en la realización de cardio y ejercicios aerobicos</p>
+                <a class="read-more" href="javascript:abrir3()">Ver rutina →</a>
                 <a class="read-more" href="#">Añadir a tus rutinas →</a>
             </div>
         </li>
         
-
     </ul>
+    <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-plus fa-2x"></i>
+                        <span class="nav-text">                         	
+						Volumen
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-fire fa-2x"></i>
+                        <span class="nav-text">
+                            Definición
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-minus fa-2x"></i>
+                        <span class="nav-text">
+                            Perdida de peso
+                        </span>
+                    </a>
+                    
+                </li>
+                
+            <li class="logout">
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li> 
+        </nav>
 		
 	</main>
 	
@@ -74,6 +135,34 @@
 		<p>&copy; 2014 <a href="http://FranciscoAMK.com">FranciscoAMK.com</a></p>
 	</footer>  / #main-footer -->
  
+ <script>
+ 	
+ 	function abrir(){
+ 		document.getElementById("vent").style.display="block";
+ 	}
+ 	
+ 	function cerrar(){
+ 		document.getElementById("vent").style.display="none";
+ 	}
+ 	
+ 	function abrir2(){
+ 		document.getElementById("vent2").style.display="block";
+ 	}
+ 	
+ 	function cerrar2(){
+ 		document.getElementById("vent2").style.display="none";
+ 	}
+ 	
+ 	function abrir3(){
+ 		document.getElementById("vent3").style.display="block";
+ 	}
+ 	
+ 	function cerrar3(){
+ 		document.getElementById("vent3").style.display="none";
+ 	}
+
+ 	
+ </script>
 	
 </body>
 </html>

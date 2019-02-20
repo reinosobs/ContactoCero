@@ -2,6 +2,7 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
+
 body {
 	margin: 0;
 	padding: 0;
@@ -11,10 +12,11 @@ body {
 	font-size: 1em;
 	line-height: 1.5em;
 	padding-top: 80px;
-	
-}
-		
 
+}
+
+
+	
 #main-header {
 	background: #333;
 	height: 80px;	
@@ -30,6 +32,8 @@ body {
 /*
  * Logo
  */
+ 
+
 #logo-header {
 	float: left;
 	padding: 25px 0 0 20px;
@@ -54,10 +58,10 @@ body {
 		font-size: 0.8em;
 		color: #999;
 	}
-	#logo-titulo {
+#logo-titulo {
 	
 		float: left;
-		padding: 25px 0 0 460px;
+		padding: 25px 0 0 437px;
 		display: block;
 		font-weight: 700;
 		font-size: 2.5em;
@@ -78,7 +82,7 @@ nav {
 	float: right;
 	}
 	nav ul {
-		margin: 0 20px;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 		padding-right: 20px;
@@ -115,15 +119,149 @@ nav {
 
 #main-content {
 	margin: 0;
-	padding: 450px;
+	padding: 95px;
     background: url("imagenes/fondo desenfocado.jpg") no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
+}
 
-	}
-.fa-2x {
+	
+.article-list-vertical{
+    list-style:none;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    padding: 0;
+}
+
+.article-list-vertical li{
+    display: block;
+    box-sizing:border-box;
+    border-radius: 3px;
+    text-align: left;
+    box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+    border:1px solid #cfcfcf;
+    overflow: hidden;
+    background-color: #fff;
+
+    font: normal 13px sans-serif;
+
+    margin-bottom: 40px;
+    max-width: 575px;
+}
+
+/* Article photo */
+
+.article-list-vertical li > a{
+    float: left;
+    width: 200px;
+    height: 200px;
+    display: block;
+
+    background-size: cover;
+}
+
+.article-list-vertical li div{
+    float: left;
+    box-sizing: border-box;
+
+    max-width: 350px;
+    padding: 30px;
+}
+
+/* Article title */
+
+.article-list-vertical li div h2{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin:0;
+}
+
+.article-list-vertical li div h2 a{
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+/* Article excerpt */
+
+.article-list-vertical li div p{
+    line-height: 20px;
+    color: #5d5d5d;
+
+    margin: 20px 0;
+}
+
+.article-list-vertical li a.read-more{
+    background-color: #87bcd7;
+    cursor: pointer;
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+@media (max-width: 600px){
+
+    .article-list-vertical{
+        max-width: 350px;
+    }
+
+    .article-list-vertical li{
+        max-width: 325px;
+    }
+
+    .article-list-vertical li > a{
+        float: none;
+        width: 100%;
+    }
+
+    .article-list-vertical li div{
+        float: none;
+        padding: 30px;
+    }
+
+}
+	
+
+/* Photo */
+
+ 
+
+ .details {
+    margin-top: 13px;
+}
+
+/* Title */
+
+ .details h3 {
+    display: block;
+    font-size: 12px;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ .details h3 a{
+    color:  #303030;
+    text-decoration: none;
+}
+
+.details .image-author {
+    display: block;
+    color:  #717171;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0;
+}
+	.fa-2x {
 font-size: 2em;
 }
 .fa {
@@ -238,6 +376,61 @@ padding:0;
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
 color:#fff;
 background-color:#5fa2db;
+}
+
+
+.ventana{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 15%;
+	display: none;
+}
+
+.ventana2{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 30%;
+	display: none;
+}
+
+.ventana3{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 67%;
+	display: none;
+}
+
+#cerrar{
+	position: absolute;
+	right: 7px;
+	top: 7px;
 }
 
 @font-face {

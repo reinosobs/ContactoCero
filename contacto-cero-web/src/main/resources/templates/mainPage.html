@@ -24,6 +24,7 @@
 				<li><a><p>Perfil</p></a></li>
 				<li><a href="ejercicios">Ejercicios <id ="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
 				<li><a href="rutinas">Rutinas<id="btn-rutinas"  type="submit" value="Rutinas"></a></li>
+				<li><a href="dietas">Dietas<id="btn-dietas"  type="submit" value="Dietas"></a></li>
 				<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"></a></li>
 
 			</ul>
@@ -31,23 +32,50 @@
   
 	</header><!-- / #main-header -->
  </form>
-	
 	<section id="main-content">
-		<menu id="menu-lateral">
-			<input id="btn-progreso" href="#" type="submit" value="Progreso">
-			<input id="btn-estadisticas" href="#" type="submit" value="Estadisticas">
-			<input id="btn-mis-ejercicios" href="#" type="submit" value="Mis ejercicios">
-			<input id="btn-mis-rutinas" href="#" type="submit" value="Mis rutinas">
-		</menu>
-	
+		<nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-2x"></i>
+                        <span class="nav-text">
+                           	
+						Mi perfil
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            Mis rutinas
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            Estadisticas
+                        </span>
+                    </a>
+                    
+                </li>
+            <form action="/login2">  
+            <li class="logout" >
+                   <a href="login2">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li> 
+                </form>
+        </nav>
+
 	</section> <!-- / #main-content -->
  
-	
-	
-	<!--<footer id="main-footer">
-		<p>&copy; 2014 <a href="http://FranciscoAMK.com">FranciscoAMK.com</a></p>
-	</footer>  / #main-footer -->
- 
-	
 </body>
 </html>

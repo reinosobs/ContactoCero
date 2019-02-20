@@ -1,24 +1,47 @@
 package es.urjc.etsii.dad.ContactoCero;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Ejercicio {
 	
-	public int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	
-	public String Nombre;
+	private String nombre;
+	private String musculo;
 	
-	public int getId() {
-		return id;
+	@OneToMany(mappedBy="ejercicio")
+	private List<Rutina> rutinas;
+	
+	protected Ejercicio() {}
+	
+	public Ejercicio(String nombre, String musculo) {
+		this.nombre=nombre;
+		this.musculo=musculo;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+
+
+	public String getMusculo() {
+		return musculo;
 	}
-	
-	
-	
+
+
+	@Override
+	public String toString() {
+		return "Ejercicio [nombre=" + nombre + ", musculo=" + musculo + "]";
+	}
 }
+	
