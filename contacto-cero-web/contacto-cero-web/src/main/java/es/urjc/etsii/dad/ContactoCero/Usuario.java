@@ -1,17 +1,32 @@
 package es.urjc.etsii.dad.ContactoCero;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Usuario {
-	String nick= "";
-	String clave= "";
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Usuario{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@ManyToOne
+	private Rutina rutinas; 
+	
+	String nick;
+	String clave;
 	private static ArrayList<Usuario> lista_usuarios; 
+	
+	protected Usuario() {}
 	
 	public Usuario (String nick, String clave) {
 		this.nick = nick;
 		this.clave = clave;
-		lista_usuarios = new ArrayList<Usuario>(); 
 	}
 	
 	public String getNick() {
@@ -25,48 +40,20 @@ public class Usuario {
     public String getClave() {
         return clave;
     }
+    public void setRutina(Rutina rut) {
+    	this.rutinas=rut;
+    }
     
     public void setClave(String clave) {
         this.clave = clave;
     }
     
     public boolean equals (Usuario u){
-        return this.nick.equals(u.nick);
+        return this.nick.equals(u.getNick())&& this.clave.equals(u.getClave());
     }
     
     public ArrayList<Usuario> getUsuarios(){
         return lista_usuarios;
     }
     
-    public void setUsuarios(ArrayList<Usuario> usuarios){
-        Usuario.lista_usuarios=usuarios;
-    }
-    
-    public Usuario autenticar() {
-        Scanner entrada = new Scanner(System.in);
-        System.out.print("Usuario: ");
-        String login = entrada.nextLine();
-        System.out.print("Password: ");
-        String pass = entrada.nextLine();
-        for (Usuario u : lista_usuarios) {
-            if (u.getNick().equals(login) && u.getClave().equals(pass)) {
-                return u;
-            }
-        }
-        return null;
-    }
-    
-public boolean registrar(Usuario nuevo) {
-        
-        boolean sePuede=true;
-        for(Usuario u: lista_usuarios){
-            if(u.getNick().contains(nuevo.getNick())){
-                sePuede=false;
-            }
-        }
-        if(sePuede==true){
-            this.lista_usuarios.add(nuevo);
-        }
-        return sePuede;
-    }
 }

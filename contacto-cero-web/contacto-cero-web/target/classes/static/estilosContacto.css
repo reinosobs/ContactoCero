@@ -12,9 +12,10 @@ body {
 	font-size: 1em;
 	line-height: 1.5em;
 	padding-top: 80px;
-	
+	    
 }
-	
+		
+
 #main-header {
 	background: #333;
 	height: 80px;	
@@ -22,6 +23,7 @@ body {
 	left: 0; 
 	top: 0; 
 	position: fixed; 
+	z-index: 100000;
 }	
 	/*#main-header a {
 		
@@ -54,10 +56,10 @@ body {
 		font-size: 0.8em;
 		color: #999;
 	}
-#logo-titulo {
+	#logo-titulo {
 	
 		float: left;
-		padding: 25px 0 0 424px;
+		padding: 25px 0 0 460px;
 		display: block;
 		font-weight: 700;
 		font-size: 2.5em;
@@ -78,7 +80,7 @@ nav {
 	float: right;
 	}
 	nav ul {
-		margin: 0;
+		margin: 0 20px;
 		padding: 0;
 		list-style: none;
 		padding-right: 20px;
@@ -91,14 +93,13 @@ nav {
 						
 					nav ul li a {
 						display: block;
-						padding: 15 0 0 10px;
+						padding: 15px 0 0 10px;
 						text-decoration: none;
 						background: #333;
 						border: 0;
 						cursor: pointer;
 						font-size: 1.0em;
 						color: white;
-						
 						}
 					
 						#btn-ejercicios:hover {
@@ -114,26 +115,16 @@ nav {
 							color: #0b76a6;
 						}
 
-input[type="submit"]{
-	background: #333;
-	border: 0;
-	cursor: pointer;
-	font-size: 1.0em;
-	color: white;
-
-}
-
 #main-content {
 	margin: 0;
-	padding: 50px;
+	padding: 125px;
     background: url("imagenes/fondo desenfocado.jpg") no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-}
-	
 
+	}
 .fa-2x {
 font-size: 2em;
 }
@@ -256,4 +247,23 @@ background-color:#5fa2db;
   font-style: normal;
   font-weight: 300;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+
+.fa {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+.panel-title {
+ font-size: 25px; 
+ color: #FFFFFF;
+ font-family: 'Open Sans', sans-serif;
+}
+
+.panel {
+ margin-top: 25px;
+ height:350px;
+ overflow-y:scroll;
+}
+.feed {
+	float: right;
 }

@@ -378,6 +378,60 @@ color:#fff;
 background-color:#5fa2db;
 }
 
+.ventana{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 15%;
+	display: none;
+}
+
+.ventana2{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 30%;
+	display: none;
+}
+
+.ventana3{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 67%;
+	display: none;
+}
+
+#cerrar{
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;
