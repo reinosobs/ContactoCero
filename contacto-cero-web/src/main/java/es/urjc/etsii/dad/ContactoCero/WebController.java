@@ -119,7 +119,5 @@ public void run(String... args) throws Exception {
 		Usuario admin= new Usuario("admin", "admin");
 		repositorio.save(admin);
 		
-
-		System.err.println(this.repositorio.findAll());
 	}
 }
