@@ -64,9 +64,9 @@ En el apartado de contacto, vemos referencias a las diferentes redes sociales re
 
 ### Diagramas
 
-![flujo fase2](https://user-images.githubusercontent.com/45769039/53118164-cd51fd80-354c-11e9-920c-c378f1a0c273.jpeg)
+![navegacion fase2](https://user-images.githubusercontent.com/45769039/53118456-6d0f8b80-354d-11e9-85ad-8b3dda7d6f0e.jpeg)
 
-Diagrama de flujo
+Diagrama de navegación
 
 ![e-r fase2](https://user-images.githubusercontent.com/45769039/53118308-199d3d80-354d-11e9-9b59-a6771a59d262.JPG)
 
