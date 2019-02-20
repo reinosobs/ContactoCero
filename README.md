@@ -60,3 +60,14 @@ En el apartado de dietas, podemos acceder a las diferentes dietas que nos ofrece
 ![contacto](https://user-images.githubusercontent.com/45769039/53117581-844d7980-354b-11e9-84cc-b154c1162914.png)
 
 En el apartado de contacto, vemos referencias a las diferentes redes sociales relacionadas con el gimnasio. También se pueden ver las publicaciones que hacen los usuarios en las redes sociales con el hashtag de la web.
+
+
+### Diagramas
+
+![flujo fase2](https://user-images.githubusercontent.com/45769039/53118164-cd51fd80-354c-11e9-920c-c378f1a0c273.jpeg)
+
+Diagrama de flujo
+
+![e-r fase2](https://user-images.githubusercontent.com/45769039/53118308-199d3d80-354d-11e9-9b59-a6771a59d262.JPG)
+
+Diagrama E/R
