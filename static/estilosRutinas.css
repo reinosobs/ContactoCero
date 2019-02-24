@@ -426,6 +426,20 @@ background-color:#5fa2db;
 	display: none;
 }
 
+#crearRutina{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 78%;
+	top: 20%;
+
+}
 #cerrar{
 	position: absolute;
 	right: 7px;

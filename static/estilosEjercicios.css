@@ -327,6 +327,22 @@ outline:0;
 margin:0;
 padding:0;
 }
+
+#crearEjercicio{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 78%;
+	top: 20%;
+
+}
+
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
 color:#fff;
 background-color:#5fa2db;
