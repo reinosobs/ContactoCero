@@ -16,7 +16,7 @@ public class Usuario{
 	private long id;
 	
 	@ManyToOne
-	private Rutina rutinas; 
+	private Rutina rutina; 
 	
 	String nick;
 	String clave;
@@ -41,7 +41,7 @@ public class Usuario{
         return clave;
     }
     public void setRutina(Rutina rut) {
-    	this.rutinas=rut;
+    	this.rutina=rut;
     }
     
     public void setClave(String clave) {

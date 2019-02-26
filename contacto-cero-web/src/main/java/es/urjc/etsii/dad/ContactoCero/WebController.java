@@ -1,13 +1,8 @@
 package es.urjc.etsii.dad.ContactoCero;
 
-//import java.awt.List;
-import java.util.List;
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,9 +49,45 @@ public class WebController implements CommandLineRunner {
 	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass) {
 		model.put("name", name);
 		model.put("pass", pass);
-		 Usuario u= new Usuario(name, pass);
-		 repositorio.save(u);
-		 return "mainPage";
+		if (name!=null && pass!=null) {
+			Usuario u= new Usuario(name, pass);
+			repositorio.save(u);
+			 return "mainPage";
+		}
+		return "login2";
+		 
+		 
+	}
+	
+	@RequestMapping("/crearRutina")
+	public String RutinaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
+		model.put("nombre", nombre);
+		model.put("descripcion", descripcion);
+		
+		Rutina rutina= new Rutina (nombre, descripcion);
+		repositorio1.save(rutina);		
+		return "rutinas";
+	}
+	
+	@RequestMapping("/crearEjercicio")
+	public String EjercicioNuevo(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
+		model.put("nombre", nombre);
+		model.put("descripcion", descripcion);
+		
+		Ejercicio ejercicio= new Ejercicio (nombre, descripcion);
+		repositorio2.save(ejercicio);		
+		return "ejercicios";
+	}
+	
+	@RequestMapping("/crearDieta")
+	public String DietaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion, @RequestParam String peso) {
+		model.put("nombre", nombre);
+		model.put("descripcion", descripcion);
+		model.put("peso", peso);
+		
+		Dietas dieta= new Dietas (nombre, descripcion, peso );
+		repositorio3.save(dieta);		
+		return "dietas";
 	}
 	
 	@GetMapping("/redirregistro")
@@ -89,7 +120,9 @@ public class WebController implements CommandLineRunner {
 	@Override
 public void run(String... args) throws Exception {
 		
-		Rutina espalda= new Rutina("espalda",'F');
+		Rutina definicion= new Rutina("Rutina definicion","Esta rutina se basa en la realización de muchas repeticiones por serie con poco peso");
+		Rutina volumen= new Rutina("Rutina volumen","Esta rutina se basa en la realización de pocas repeticiones por serie con mucho peso");
+		Rutina perdida= new Rutina("Rutina perdida de peso","Esta rutina se basa en la realización de cardio y ejercicios aerobicos");
 		
 		Ejercicio remo= new Ejercicio("Remo","Espalda");
 		
@@ -100,17 +133,23 @@ public void run(String... args) throws Exception {
 		Dietas hipocalorica= new Dietas("hipocalorica","reducir","perder");
 		Dietas mantenimiento= new Dietas("mantenimiento","mantener","perder o ganar");
 		
-		repositorio1.save(espalda);
+		
 		
 		repositorio3.save(hypercalorica);
 		repositorio3.save(hipocalorica);
 		repositorio3.save(mantenimiento);
 		
-		//remo.getRutinas().add(espalda);
-		//repositorio2.save(remo);
 		
-		user1.setRutina(espalda);
-		user2.setRutina(espalda);
+		repositorio2.save(remo);
+		
+		volumen.setEjercicio(remo);
+		
+		repositorio1.save(volumen);
+		repositorio1.save(definicion);
+		repositorio1.save(perdida);
+		
+		//user1.setRutina(definicion);
+		//user2.setRutina(perdida);
 		
 		repositorio.save(user1);
 		repositorio.save(user2);
@@ -119,7 +158,5 @@ public void run(String... args) throws Exception {
 		Usuario admin= new Usuario("admin", "admin");
 		repositorio.save(admin);
 		
-
-		System.err.println(this.repositorio.findAll());
 	}
 }

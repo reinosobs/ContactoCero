@@ -1,13 +1,11 @@
 package es.urjc.etsii.dad.ContactoCero;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -17,7 +15,7 @@ public class Rutina {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String rutina;
-	private char dificultad;
+	private String descripcion;
 	
 	@OneToMany(mappedBy= "rutinas")
 	private List<Ejercicio> usuarios;
@@ -33,23 +31,27 @@ public class Rutina {
 	
 	protected Rutina() {}
 	
-	public Rutina(String rutina, char dificultad) {
+	public Rutina(String rutina, String descripcion) {
 		this.rutina=rutina;
-		this.dificultad=dificultad;
+		this.descripcion=descripcion;
 	}
 
 	public String getRutina() {
 		return rutina;
 	}
 
-	public char getDificultad() {
-		return dificultad;
+	public String getDescription() {
+		return descripcion;
+	}
+	
+	public void setEjercicio(Ejercicio e) {
+		this.ejercicio=e;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Rutina [rutina=" + rutina + ", dificultad=" + dificultad + "]";
+		return "Rutina [rutina=" + rutina + ", dificultad=" + descripcion + "]";
 	}
 	
 	
