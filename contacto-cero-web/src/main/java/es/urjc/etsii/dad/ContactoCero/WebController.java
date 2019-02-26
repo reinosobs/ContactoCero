@@ -1,5 +1,8 @@
 package es.urjc.etsii.dad.ContactoCero;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -81,12 +84,11 @@ public class WebController implements CommandLineRunner {
 	
 	@RequestMapping("/crearDieta")
 	public String DietaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion, @RequestParam String peso) {
-		model.put("nombre", nombre);
-		model.put("descripcion", descripcion);
-		model.put("peso", peso);
-		
+		model.addAttribute("dietas",repositorio3.findAll());
 		Dietas dieta= new Dietas (nombre, descripcion, peso );
-		repositorio3.save(dieta);		
+		repositorio3.save(dieta);
+
+			
 		return "dietas";
 	}
 	
@@ -129,7 +131,7 @@ public void run(String... args) throws Exception {
 		Usuario user1= new Usuario("Sergio","1234");
 		Usuario user2= new Usuario("Luis","hola");
 		
-		Dietas hypercalorica= new Dietas("hypercalorica","potenciar","ganar");
+		/*Dietas hypercalorica= new Dietas("hypercalorica","potenciar","ganar");
 		Dietas hipocalorica= new Dietas("hipocalorica","reducir","perder");
 		Dietas mantenimiento= new Dietas("mantenimiento","mantener","perder o ganar");
 		
@@ -137,7 +139,7 @@ public void run(String... args) throws Exception {
 		
 		repositorio3.save(hypercalorica);
 		repositorio3.save(hipocalorica);
-		repositorio3.save(mantenimiento);
+		repositorio3.save(mantenimiento);*/
 		
 		
 		repositorio2.save(remo);
