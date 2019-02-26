@@ -11,7 +11,6 @@ body {
 	background: #f2f2f2; 
 	font-size: 1em;
 	line-height: 1.5em;
-	padding-top: 80px;
 
 }
 
@@ -19,11 +18,7 @@ body {
 	
 #main-header {
 	background: #333;
-	height: 80px;	
-	width: 100%; 
-	left: 0; 
-	top: 0; 
-	position: fixed; 
+	height: 80px;
 }	
 	/*#main-header a {
 		
@@ -119,13 +114,15 @@ nav {
 
 #main-content {
 	margin: 0;
-	padding: 50px;
-    background: url("imagenes/fondo desenfocado.jpg") no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
+    padding: 5px;
+    width: cover;
+    height: 750px;
+    background: url("imagenes/fondo desenfocado.jpg");
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    background-position: center;
+	}
+
 /* Photo */
 
 .image-list-small {
@@ -239,7 +236,8 @@ float: left;
 margin: 80px 0 0 0;
 padding: 0 0 0 0;
 background:#212121;
-position:fixed;
+border-right:1px solid #e5e5e5;
+position:absolute;
 top:0;
 bottom:0;
 height:100%;
@@ -253,7 +251,7 @@ z-index:1000;
 }
 
 .main-menu>ul {
-margin:3px 0;
+margin:7px 0;
 }
 
 .main-menu li {
@@ -327,22 +325,6 @@ outline:0;
 margin:0;
 padding:0;
 }
-
-#crearEjercicio{
-	
-	background: #fff;
-	width: 20%;
-	font-family: Helvetica, Arial, sans-serif;
-	font-sice: 18px;
-	text-align: center;
-	padding: 20px;
-	min-height: 20px;
-	position: fixed;
-	left: 78%;
-	top: 20%;
-
-}
-
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
 color:#fff;
 background-color:#5fa2db;

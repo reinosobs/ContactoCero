@@ -1,0 +1,114 @@
+@charset "ISO-8859-1";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #666;
+	background: #f2f2f2; 
+	font-size: 1em;
+	line-height: 1.5em;
+	
+}
+	
+#main-header {
+	background: #333;
+	color: white;
+	height: 80px;
+}	
+	#main-header a {
+		color: white;
+	}
+ 
+/*
+ * Logo
+ */
+#logo-header {
+	float: left;
+	padding: 25px 0 0 20px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #0b76a6;
+	}
+	
+	#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	
+		
+	#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #999;
+	}
+#logo-titulo .titulo {
+	
+		float: left;
+		padding: 25px 0 0 345px;
+		display: block;
+		font-weight: 700;
+		font-size: 2.5em;
+		text-decoration: none;
+	}
+	#logo-titulo:hover {
+		color: #0b76a6;
+	}
+	
+	
+ 
+/*
+ * Navegación
+ */
+nav {
+	float: right;
+	}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+			}
+			
+			nav ul li {
+				display: inline-block;
+				line-height: 80px;
+					}
+						
+					nav ul li a {
+						display: block;
+						padding: 0 10px;
+						text-decoration: none;
+						}
+						#btn-perfil{
+						color: #0b76a6;
+						}
+						#btn-perfil:hover {
+								color: #0b76a6;
+						}
+						#btn-ejercicios:hover {
+							color: #0b76a6;
+						}
+						#btn-rutinas:hover {
+							color: #0b76a6;
+						}
+						#btn-contacto:hover {
+							color: #0b76a6;
+						}
+							
+
+
+
+#main-content {
+	margin: 0;
+    padding: 5px;
+    width: cover;
+    height: 567px;
+    background: url("imagenes/fondo desenfocado.jpg");
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    background-position: center;
+}

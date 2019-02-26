@@ -11,19 +11,12 @@ body {
 	background: #f2f2f2; 
 	font-size: 1em;
 	line-height: 1.5em;
-	padding-top: 80px;
-	    
+	
 }
-		
-
+	
 #main-header {
 	background: #333;
-	height: 80px;	
-	width: 100%; 
-	left: 0; 
-	top: 0; 
-	position: fixed; 
-	z-index: 100000;
+	height: 80px;
 }	
 	/*#main-header a {
 		
@@ -56,10 +49,10 @@ body {
 		font-size: 0.8em;
 		color: #999;
 	}
-	#logo-titulo {
+#logo-titulo {
 	
 		float: left;
-		padding: 25px 0 0 460px;
+		padding: 25px 0 0 424px;
 		display: block;
 		font-weight: 700;
 		font-size: 2.5em;
@@ -80,7 +73,7 @@ nav {
 	float: right;
 	}
 	nav ul {
-		margin: 0 20px;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 		padding-right: 20px;
@@ -93,13 +86,14 @@ nav {
 						
 					nav ul li a {
 						display: block;
-						padding: 15px 0 0 10px;
+						padding: 0 0 0 10px;
 						text-decoration: none;
 						background: #333;
 						border: 0;
 						cursor: pointer;
 						font-size: 1.0em;
 						color: white;
+						
 						}
 					
 						#btn-ejercicios:hover {
@@ -115,16 +109,97 @@ nav {
 							color: #0b76a6;
 						}
 
+input[type="submit"]{
+	background: #333;
+	border: 0;
+	cursor: pointer;
+	font-size: 1.0em;
+	color: white;
+
+}
+
 #main-content {
 	margin: 0;
-	padding: 125px;
-    background: url("imagenes/fondo desenfocado.jpg") no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-
+    padding: 10px;
+    width: cover;
+    height: 567px;
+    background: url("imagenes/fondo desenfocado.jpg");
+    background-size: cover;
+    background-position: center;
 	}
+	#rrss {
+		margin: 0;
+		padding: 20px 0 0 10px;
+		width: 260px;
+		height: 340px;
+		font-family: Helvetica, Arial, sans-serif;
+		background: #333; 
+		}
+		#imagenIg {
+		float: left;
+		margin: 0;
+		padding: 0 0 0 10px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		}
+		#textoIg{
+		float: left;
+		padding: 7px 0 0 15px;
+		display: block;
+		color: #FFF;
+		font-size: 1.3em;
+		line-height: 1.6em;
+		}
+		#imagenTw {
+		float: left;
+		margin: 0;
+		padding: 50px 0 0 10px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		}
+		#textoTw{
+		float: left;
+		padding: 57px 0 0 15px;
+		display: block;
+		color: #FFF;
+		font-size: 1.3em;
+		line-height: 1.6em;
+		}
+		#imagenFb {
+		float: left;
+		margin: 0;
+		padding: 50px 0 0 10px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		}
+		#textoFb{
+		float: left;
+		padding: 57px 0 0 15px;
+		display: block;
+		color: #FFF;
+		font-size: 1.3em;
+		line-height: 1.6em;
+		}
+		#imagenYt {
+		float: left;
+		margin: 0;
+		padding: 50px 0 0 10px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		}
+		#textoYt{
+		float: left;
+		padding: 57px 0 0 15px;
+		display: block;
+		color: #FFF;
+		font-size: 1.3em;
+		line-height: 1.6em;
+		}
+
 .fa-2x {
 font-size: 2em;
 }
@@ -149,7 +224,8 @@ float: left;
 margin: 80px 0 0 0;
 padding: 0 0 0 0;
 background:#212121;
-position:fixed;
+border-right:1px solid #e5e5e5;
+position:absolute;
 top:0;
 bottom:0;
 height:100%;
@@ -163,7 +239,7 @@ z-index:1000;
 }
 
 .main-menu>ul {
-margin:3px 0;
+margin:7px 0;
 }
 
 .main-menu li {
@@ -247,23 +323,4 @@ background-color:#5fa2db;
   font-style: normal;
   font-weight: 300;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
-}
-
-.fa {
-  font-size: 20px;
-  color: #FFFFFF;
-}
-.panel-title {
- font-size: 25px; 
- color: #FFFFFF;
- font-family: 'Open Sans', sans-serif;
-}
-
-.panel {
- margin-top: 25px;
- height:350px;
- overflow-y:scroll;
-}
-.feed {
-	float: right;
 }

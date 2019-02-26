@@ -10,18 +10,13 @@ body {
 	background: #f2f2f2; 
 	font-size: 1em;
 	line-height: 1.5em;
-	padding-top: 80px;
 	
 }
 		
 
 #main-header {
 	background: #333;
-	height: 80px;	
-	width: 100%; 
-	left: 0; 
-	top: 0; 
-	position: fixed; 
+	height: 80px;
 }	
 	/*#main-header a {
 		
@@ -78,7 +73,7 @@ nav {
 	float: right;
 	}
 	nav ul {
-		margin: 0 20px;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 		padding-right: 20px;
@@ -115,13 +110,13 @@ nav {
 
 #main-content {
 	margin: 0;
-	padding: 450px;
-    background: url("imagenes/fondo desenfocado.jpg") no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-
+    padding: 5px;
+    width: cover;
+    height: 750px;
+    background: url("imagenes/fondo desenfocado.jpg");
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    background-position: center;
 	}
 .fa-2x {
 font-size: 2em;
@@ -147,7 +142,8 @@ float: left;
 margin: 80px 0 0 0;
 padding: 0 0 0 0;
 background:#212121;
-position:fixed;
+border-right:1px solid #e5e5e5;
+position:absolute;
 top:0;
 bottom:0;
 height:100%;
@@ -161,7 +157,7 @@ z-index:1000;
 }
 
 .main-menu>ul {
-margin:3px 0;
+margin:7px 0;
 }
 
 .main-menu li {

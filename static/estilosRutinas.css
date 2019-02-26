@@ -435,9 +435,10 @@ background-color:#5fa2db;
 	text-align: center;
 	padding: 20px;
 	min-height: 20px;
-	position: fixed;
+	position: absolute;
 	left: 78%;
 	top: 20%;
+	z-index: -1 important;
 
 }
 #cerrar{
