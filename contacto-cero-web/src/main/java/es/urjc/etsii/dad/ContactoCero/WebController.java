@@ -64,9 +64,8 @@ public class WebController implements CommandLineRunner {
 	
 	@RequestMapping("/crearRutina")
 	public String RutinaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
-		model.put("nombre", nombre);
-		model.put("descripcion", descripcion);
-		
+
+		model.addAttribute("rutinas",repositorio1.findAll());
 		Rutina rutina= new Rutina (nombre, descripcion);
 		repositorio1.save(rutina);		
 		return "rutinas";
@@ -74,9 +73,8 @@ public class WebController implements CommandLineRunner {
 	
 	@RequestMapping("/crearEjercicio")
 	public String EjercicioNuevo(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
-		model.put("nombre", nombre);
-		model.put("descripcion", descripcion);
-		
+
+		model.addAttribute("ejercicios",repositorio2.findAll());
 		Ejercicio ejercicio= new Ejercicio (nombre, descripcion);
 		repositorio2.save(ejercicio);		
 		return "ejercicios";
@@ -99,6 +97,7 @@ public class WebController implements CommandLineRunner {
 	
 	@GetMapping("/ejercicios")
 	public String ejercicios(ModelMap model) {
+		//model.addAttribute(repositorio2.findAll());
 		return "ejercicios";
 	}
 	

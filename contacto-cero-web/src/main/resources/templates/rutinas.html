@@ -106,20 +106,12 @@
 						class="read-more" href="#">Añadir a tus rutinas →</a>
 				</div>
 			</li>
-
-
-
-			<section id="crearRutinaNueva">
-				<form action="/crearRutina">
-					<p>CREAR RUTINA</p>
-					<p>Nombre de la rutina</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion'
-						placeholder="Introduce la descripción"> <input
-						type="submit" value="Añadir">
-				</form>
-			</section>
+			<body>
+			{{#rutinas}}
+			<p>Nombre: {{descripcion}}</p>
+			<p>Descripción: {{rutina}}</p>
+			{{/rutinas}}
+			</body>
 
 
 

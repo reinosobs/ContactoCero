@@ -139,18 +139,13 @@
 				</div></li>
 				
 
-			<section id="crearEjercicioNuevo">
-				<form action="/crearEjercicio">
-					<p>CREAR Ejercicio</p>
-					<p>Nombre del ejercicio</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion'
-						placeholder="Introduce la descripción"> <input
-						type="submit" value="Añadir">
-				</form>
-			</section>
-
+			
+			<body>
+			{{#ejercicios}}
+			<p>Nombre: {{musculo}}</p>
+			<p>Descripción: {{nombre}}</p>
+			{{/ejercicios}}
+			</body>
 		</ul>
 
 		<nav class="main-menu">
