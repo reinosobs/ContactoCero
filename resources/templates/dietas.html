@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Cabecera fija</title>
+ 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilosDietas.css">
+</head>
+ 
+<body>
+	<form action="/dietas">
+	<header id="main-header">
+		
+		<a id="logo-header" href="#">
+			
+			<spam class="site-name">Dietas</spam>
+		</a> <!-- / #logo-header -->
+		
+ 		<a id="logo-titulo" href="#">
+			<spam class="titulo">Contacto Cero</spam>
+		</a>
+		
+		<nav>
+			<ul>
+
+				<li><a href="mainPage">Perfil<id="btn-ejercicios" type="submit" value="Perfil"><p></p></a></li>
+				<li><a href="ejercicios">Ejercicios <id ="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
+				<li><a href="rutinas">Rutinas<id="btn-rutinas"  type="submit" value="Rutinas"></a></li>
+				<li><a><p>Dietas</p></a></li>
+				<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"></a></li>
+
+		</nav><!-- / nav -->
+  
+	</header><!-- / #main-header -->
+ </form>
+	
+	<section id="main-content">
+	
+	<div class="ventana" id="vent">
+			<div id="cerrar"> <a href="javascript:cerrar()"><img src="imagenes/cancel.png"></a></div>
+				<p>DIETA VOLUMEN 1</p>
+			
+		</div>
+		
+		<div class="ventana2" id="vent2">
+			<div id="cerrar"> <a href="javascript:cerrar2()"><img src="imagenes/cancel.png"></a></div>
+				<p>DIETA VOLUMEN 2</p>
+			
+		</div>
+		
+		<div class="ventana3" id="vent3">
+			<div id="cerrar"> <a href="javascript:cerrar3()"><img src="imagenes/cancel.png"></a></div>
+				<p>DIETA VOLUMEN 3</p>
+			
+		</div>
+	
+	
+	<ul id="forma-rutinas" href="#" class="article-list-vertical">
+
+        <li>
+            <a href="#" style="background-image: url('https://robertocastellano.com/wp-content/uploads/2018/11/dieta-de-volumen-750x410.jpg')"></a>
+            <div>
+                <h2><a href="#">Dieta volumen 1</a></h2>
+                <p>Dieta pensada para ganar volumen para principiantes</p>
+                <a class="read-more" href="javascript:abrir()">Ver dieta →</a>
+                <a class="read-more" href="#">Descargar dieta →</a>
+            </div>
+        </li>
+        <li>
+            <a href="#" style="background-image: url('https://robertocastellano.com/wp-content/uploads/2018/11/dieta-de-volumen-750x410.jpg')"></a>
+            <div>
+                <h2><a href="#">Dieta volumen 2</a></h2>
+                <p>Dieta pensada para ganar volumen para usuarios avanzados</p>
+                <a class="read-more" href="javascript:abrir2()">Ver dieta →</a>
+                <a class="read-more" href="#">Descargar dieta →</a>
+            </div>
+        </li>
+        <li>
+            <a href="#" style="background-image: url('https://robertocastellano.com/wp-content/uploads/2018/11/dieta-de-volumen-750x410.jpg')"></a>
+            <div>
+                <h2><a href="#">Dieta volumen 3</a></h2>
+                <p>Dieta pensada para ganar volumen para profesionales</p>
+                <a class="read-more" href="javascript:abrir3()">Ver dieta →</a>
+                <a class="read-more" href="#">Descargar dieta →</a>
+            </div>
+        </li>
+        
+    		<form action="/crearDieta"></form>
+			<form action="/crearDieta">
+				<section id="crearDieta" >
+					<p>CREAR DIETA</p>
+					<p>Nombre de la dieta</p>
+					<input type="text" name='nombre' placeholder="Introduce el nombre">
+					<p>Descripción</p>
+					<input type="text" name='descripcion' placeholder="Introduce la descripción">
+					<input type="submit" value="Añadir">
+				</section>				
+			</form>
+        
+    </ul>
+		<nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-plus fa-2x"></i>
+                        <span class="nav-text">
+                           	
+						Hipercalórica
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-minus fa-2x"></i>
+                        <span class="nav-text">
+                            Hipocalórica
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-check fa-2x"></i>
+                        <span class="nav-text">
+                            Mantenimiento
+                        </span>
+                    </a>
+                    
+                </li>
+
+               
+                <li class="logout">
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+        </nav>
+
+	</section> <!-- / #main-content -->
+ 
+ 
+  <script>
+ 	
+ 	function abrir(){
+ 		document.getElementById("vent").style.display="block";
+ 	}
+ 	
+ 	function cerrar(){
+ 		document.getElementById("vent").style.display="none";
+ 	}
+ 	
+ 	function abrir2(){
+ 		document.getElementById("vent2").style.display="block";
+ 	}
+ 	
+ 	function cerrar2(){
+ 		document.getElementById("vent2").style.display="none";
+ 	}
+ 	
+ 	function abrir3(){
+ 		document.getElementById("vent3").style.display="block";
+ 	}
+ 	
+ 	function cerrar3(){
+ 		document.getElementById("vent3").style.display="none";
+ 	}
+
+ 	
+ </script>
+ 
+
+</body>
+</html>
