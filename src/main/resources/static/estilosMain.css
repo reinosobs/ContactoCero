@@ -240,6 +240,50 @@ color:#fff;
 background-color:#5fa2db;
 }
 
+#crearRutinaNueva{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 70%;
+	top: 20%;
+
+}
+
+#crearEjercicioNuevo{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 10%;
+	top: 20%;
+
+}
+
+#crearDietaNueva{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 40%;
+	top: 20%;
+
+}
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;

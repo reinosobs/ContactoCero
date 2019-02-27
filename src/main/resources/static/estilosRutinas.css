@@ -433,7 +433,7 @@ background-color:#5fa2db;
 	top: 7px;
 }
 
-#crearRutinaNueva{
+#crearDietaNueva{
 	
 	background: #fff;
 	width: 20%;
@@ -447,6 +447,43 @@ background-color:#5fa2db;
 	top: 20%;
 
 }
+
+#nuevaDieta{
+	margin: 0;
+	padding: 5px 0 0 0;
+	background: #fff;	
+}
+
+#espacioBlanco{
+	background: #000;
+	color: #000;
+	top: 10px;
+	bottom: 10px;
+	
+}
+
+.botonDieta{
+	background: #87bcd7;
+	color: #fff;
+	padding: 3px 3px 3px 3px;
+	margin:  0 0 0 20px;
+}
+
+#asignarRutina{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 77%;
+	top: 20%;
+
+}
+
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;

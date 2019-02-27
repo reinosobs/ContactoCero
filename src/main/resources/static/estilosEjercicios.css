@@ -332,7 +332,29 @@ color:#fff;
 background-color:#5fa2db;
 }
 
-#crearEjercicioNuevo{
+.ventana4{
+	background: #000000;
+	width: 91%;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 250px;
+	min-height: 250px;
+	border-radius: 15px;
+	position: absolute;
+	left: 6.5%;
+	top: 87%;
+	display: none;
+}
+
+#cerrar{
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+#crearDietaNueva{
 	
 	background: #fff;
 	width: 20%;
@@ -343,6 +365,42 @@ background-color:#5fa2db;
 	min-height: 20px;
 	position: fixed;
 	left: 78%;
+	top: 20%;
+
+}
+
+#nuevaDieta{
+	margin: 0;
+	padding: 5px 0 0 0;
+	background: #fff;	
+}
+
+#espacioBlanco{
+	background: #000;
+	color: #000;
+	top: 10px;
+	bottom: 10px;
+	
+}
+
+.botonDieta{
+	background: #87bcd7;
+	color: #fff;
+	padding: 3px 3px 3px 3px;
+	margin:  0 0 0 20px;
+}
+
+#asignarRutina{
+	
+	background: #fff;
+	width: 20%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-sice: 18px;
+	text-align: center;
+	padding: 20px;
+	min-height: 20px;
+	position: fixed;
+	left: 77%;
 	top: 20%;
 
 }

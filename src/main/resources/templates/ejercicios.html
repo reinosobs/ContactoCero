@@ -47,110 +47,29 @@
 	</form>
 		<main id="main-content">
 		<ul id="forma-ejercicios" href="#" class="image-list-small">
-			<h1>TREN SUPERIOR</h1>
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">In the subway</a>
-					</h3>
-					<p class="image-author">Matt Stone</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Industrial</a>
-					</h3>
-					<p class="image-author">Earnest Leming</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">When in Rome..</a>
-					</h3>
-					<p class="image-author">Edward Flint</p>
-				</div></li>
-			<h2>TREN INFERIOR</h2>
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Mountain Top</a>
-					</h3>
-					<p class="image-author">Rick Alpine</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Vienna Adventure</a>
-					</h3>
-					<p class="image-author">Stacy River</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Magnificent beach</a>
-					</h3>
-					<p class="image-author">Frank Stone</p>
-				</div></li>
-			<h3>EJERCICIOS DE CARDIO</h3>
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Mountain Top</a>
-					</h3>
-					<p class="image-author">Rick Alpine</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Vienna Adventure</a>
-					</h3>
-					<p class="image-author">Stacy River</p>
-				</div></li>
-
-			<li><a href="#"
-				style="background-image: url('http://diafit.net/wp-content/uploads/2017/11/FLEXIONES-DE-BRAZOS-C%C3%93MO-Y-CU%C3%81NTAS-HACER2.jpg');"></a>
-
-				<div class="details">
-					<h3>
-						<a href="#">Magnificent beach</a>
-					</h3>
-					<p class="image-author">Frank Stone</p>
-				</div></li>
-				
-			<form action="/crearEjercicio"></form>
-			<section id="crearEjercicioNuevo">
-				<form action="/crearEjercicio">
-					<p>CREAR Ejercicio</p>
-					<p>Nombre del ejercicio</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion'
-						placeholder="Introduce la descripción"> <input
-						type="submit" value="Añadir">
+			
+			
+			<section href="#" id="nuevaDieta">
+				{{#ejercicios}}
+				<p>Nombre: {{nombre}}</p>
+				<p>Musculo: {{musculo}}</p>
+				<a class="botonDieta" href="#">Ver dieta →</a>
+				<a class="botonDieta" href="#">Descargar dieta →</a>
+				<section href="#" id="espacioBlanco">-</section>
+				{{/ejercicios}}		
+			</section>
+			
+			<section id="asignarRutina">
+			<form action="/asignarEjeraRut">
+					<p>Asignacion de Ejercicio a Rutina</p>
+					<p>Nombre de la rutina</p>
+					<input type="text" name='nombreRutina' placeholder="Introduce el nombre">
+					<p>Nick del ejercicio</p>
+					<input type="text" name='nombreEjer' placeholder="Introduce el nombre""> 
+					<input type="submit" value="Añadir">
 				</form>
 			</section>
-
+			
 		</ul>
 
 		<nav class="main-menu">
