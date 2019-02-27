@@ -41,23 +41,23 @@ Página para hacer login y entrar en la web del gimnasio.
 
 Página para registrarse en el caso de no poseer una cuenta.
 
-![perfil](https://user-images.githubusercontent.com/45769039/53116920-12286500-354a-11e9-8247-1814cdf31394.PNG)
+![perfil2](https://user-images.githubusercontent.com/45769039/53530761-37404900-3af1-11e9-9e85-a6c8e74f9952.PNG)
 
 En el apartado de perfinl, podremos acceder a los datos básicos de nuestra cuenta, asi como a las rutinas guardadas y a las estadísticas de nuestro progreso.
 
-![ejercicios](https://user-images.githubusercontent.com/45769039/53117053-5156b600-354a-11e9-81c9-d2ff76fe1dc6.PNG)
+![ejercicios2](https://user-images.githubusercontent.com/45769039/53530781-47f0bf00-3af1-11e9-81da-a131728e287d.PNG)
 
 En el apartado de ejercicios, podemos acceder a los diferentes tipos de ejercicios, agrupados en: tren superior, tren inferior y cardio.
 
-![rutinas](https://user-images.githubusercontent.com/45769039/53117194-a8f52180-354a-11e9-88c9-b2bf9633f435.PNG)
+![rutinas2](https://user-images.githubusercontent.com/45769039/53530793-52ab5400-3af1-11e9-84ad-cdb83628238c.PNG)
 
 En el apartados de rutinas, podemos acceder a los diferentes tipos de rutinas, agrupadas en: volumen, definición y pérdida de peso. Se nos da la posibilidad de guardar las rutinas que queramos en nuestro perfil.
 
-![dietas](https://user-images.githubusercontent.com/45769039/53117392-1b660180-354b-11e9-8f86-c07e2ad06519.PNG)
+![dietas2](https://user-images.githubusercontent.com/45769039/53530814-60f97000-3af1-11e9-8351-87a34dc52ea2.PNG)
 
 En el apartado de dietas, podemos acceder a las diferentes dietas que nos ofrece la web, agrupadas en: hipercalórica, hipercalórica y mantenimiento. Se nos ofrece la posibilidad de descargarnos las dietas que deseemos.
 
-![contacto](https://user-images.githubusercontent.com/45769039/53117581-844d7980-354b-11e9-84cc-b154c1162914.png)
+![contacto2](https://user-images.githubusercontent.com/45769039/53530833-72427c80-3af1-11e9-8ad6-b6d48ff68fc7.PNG)
 
 En el apartado de contacto, vemos referencias a las diferentes redes sociales relacionadas con el gimnasio. También se pueden ver las publicaciones que hacen los usuarios en las redes sociales con el hashtag de la web.
 
