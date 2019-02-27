@@ -43,11 +43,11 @@ Página para registrarse en el caso de no poseer una cuenta.
 
 ![perfil2](https://user-images.githubusercontent.com/45769039/53530761-37404900-3af1-11e9-9e85-a6c8e74f9952.PNG)
 
-En el apartado de perfinl, podremos acceder a los datos básicos de nuestra cuenta, asi como a las rutinas guardadas y a las estadísticas de nuestro progreso.
+En el apartado de perfin, podremos acceder a los datos básicos de nuestra cuenta, asi como a las rutinas guardadas y a las estadísticas de nuestro progreso. También podremos crear ejercicios, rutinas y dietas.
 
 ![ejercicios2](https://user-images.githubusercontent.com/45769039/53530781-47f0bf00-3af1-11e9-81da-a131728e287d.PNG)
 
-En el apartado de ejercicios, podemos acceder a los diferentes tipos de ejercicios, agrupados en: tren superior, tren inferior y cardio.
+En el apartado de ejercicios, podemos acceder a los diferentes tipos de ejercicios, agrupados en: tren superior, tren inferior y cardio, así como asignar ejercicios a rutinas existentes.
 
 ![rutinas2](https://user-images.githubusercontent.com/45769039/53530793-52ab5400-3af1-11e9-84ad-cdb83628238c.PNG)
 
