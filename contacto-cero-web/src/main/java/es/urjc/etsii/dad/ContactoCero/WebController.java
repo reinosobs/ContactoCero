@@ -30,15 +30,6 @@ public class WebController implements CommandLineRunner {
 	@Autowired
 	private DietasRepositorio repositorioDieta;
 
-	/*
-	 * @RequestMapping("/login2") public String login(ModelMap model, @RequestParam
-	 * String name, @RequestParam String pass) {
-	 * 
-	 * model.put("name", name); model.put("pass", pass); Usuario u = new
-	 * Usuario(name, pass); if (u.equals(repositorioUsuario.findByNickAndClave(name,
-	 * pass))) { return "mainPage"; } else { return "errorLoging"; } }
-	 */
-
 	@GetMapping("/")
 	public String cerrarSesion() {
 		return "cerrarSesion";
@@ -69,7 +60,7 @@ public class WebController implements CommandLineRunner {
 		model.put("name", name);
 		model.put("pass", pass);
 		if (name != null || pass != null) {
-			Usuario u = new Usuario(name, pass);
+			Usuario u = new Usuario(name, pass,"ROLE_USER" );
 			usuarioRepositorio.save(u);
 			return "mainPage";
 		}
@@ -205,7 +196,6 @@ public class WebController implements CommandLineRunner {
 		Ejercicio sentadillas = new Ejercicio("Sentadillas", "Pierna");
 		Ejercicio frances = new Ejercicio("Frances", "Brazo");
 
-		// Usuario user1 = new Usuario("Sergio", "1234");
 
 		Dietas hypercalorica = new Dietas("hypercalorica", "potenciar", "ganar");
 		Dietas hipocalorica = new Dietas("hipocalorica", "reducir", "perder");
@@ -231,8 +221,7 @@ public class WebController implements CommandLineRunner {
 
 		// usuarioRepositorio.save(user1);
 
-		// Usuario admin = new Usuario("admin", "admin");
-		// usuarioRepositorio.save(admin);
+	
 
 	}
 }
