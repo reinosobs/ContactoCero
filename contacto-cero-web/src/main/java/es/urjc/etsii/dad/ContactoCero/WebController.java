@@ -1,11 +1,18 @@
 package es.urjc.etsii.dad.ContactoCero;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,151 +20,219 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WebController implements CommandLineRunner {
-	
+
 	@Autowired
-	private UsuarioRepositorio repositorio;
+	private UsuarioRepositorio usuarioRepositorio;
 	@Autowired
-	private RutinaRepositorio repositorio1;
+	private RutinaRepositorio repositorioRutina;
 	@Autowired
-	private EjercicioRepositorio repositorio2;
+	private EjercicioRepositorio repositorioEjercicio;
 	@Autowired
-	private DietasRepositorio repositorio3;
-	
-	@RequestMapping("/login2")
-	public String login(ModelMap model, @RequestParam String name, @RequestParam String pass) {
-	 
-	model.put("name", name);
-	model.put("pass", pass);
-	 Usuario u= new Usuario(name, pass);
-	 if(u.equals(repositorio.findByNickAndClave(name, pass))) {
-	 	return "mainPage";
-	 }
-	 else {
-	 	return "errorLoging";
-	 }
+	private DietasRepositorio repositorioDieta;
+
+	/*
+	 * @RequestMapping("/login2") public String login(ModelMap model, @RequestParam
+	 * String name, @RequestParam String pass) {
+	 * 
+	 * model.put("name", name); model.put("pass", pass); Usuario u = new
+	 * Usuario(name, pass); if (u.equals(repositorioUsuario.findByNickAndClave(name,
+	 * pass))) { return "mainPage"; } else { return "errorLoging"; } }
+	 */
+
+	@GetMapping("/")
+	public String cerrarSesion() {
+		return "cerrarSesion";
 	}
 
-	
-	@GetMapping("/redirlogin")
-	public String redirlogin(ModelMap model){
-		return "login2";
+	@GetMapping("/login")
+	public String login(Model model, HttpServletRequest request) {
+
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		return "login";
 	}
-	@GetMapping("/mainPage")
-	public String perfil(ModelMap model) {//, @RequestParam String name) {
-		//model.addAttribute(name);
-		return "mainPage";
+
+	@GetMapping("/redirregistro")
+	public String redirregistro(ModelMap model, HttpServletRequest request) {
+
+   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+   	 model.addAttribute("token", token.getToken());
+		return "Registro_template";
 	}
-	
+
 	@RequestMapping("/registro")
-	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass) {
+	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, HttpServletRequest request) {
+
+	   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+	   	 model.addAttribute("token", token.getToken());
+
 		model.put("name", name);
 		model.put("pass", pass);
-		if (name!=null && pass!=null) {
-			Usuario u= new Usuario(name, pass);
-			repositorio.save(u);
-			 return "mainPage";
+		if (name != null || pass != null) {
+			Usuario u = new Usuario(name, pass);
+			usuarioRepositorio.save(u);
+			return "mainPage";
 		}
-		return "login2";
-		 
-		 
+		return "login";
 	}
-	
+
+	@GetMapping("/errorLogin")
+	public String errorLoging() {
+		return "errorLogin";
+	}
+
+	@RequestMapping("/cogerRutina")
+	public String cogerRutina(Model model, @RequestParam String nombreRutina, @RequestParam String nombreUser, HttpServletRequest request) {
+		model.addAttribute("usuario", usuarioRepositorio.findAll());
+		model.addAttribute("rutinas", repositorioRutina.findAll());
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+	   	model.addAttribute("token", token.getToken());
+		Usuario u = usuarioRepositorio.findByNick(nombreUser);
+		Rutina r = repositorioRutina.findByRutina(nombreRutina);
+		try {
+			u.setRutina(r);
+			usuarioRepositorio.save(u);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "rutinas";
+
+	}
+
+	@RequestMapping("/asignarEjeraRut")
+	public String asignarEjer(Model model, @RequestParam String nombreRutina, @RequestParam String nombreEjer) {
+		model.addAttribute("ejercicios", repositorioEjercicio.findAll());
+		model.addAttribute("rutinas", repositorioRutina.findAll());
+
+		Ejercicio e = repositorioEjercicio.findByNombre(nombreEjer);
+		Rutina r = repositorioRutina.findByRutina(nombreRutina);
+		try {
+			r.setEjercicio(e);
+			repositorioRutina.save(r);
+
+		} catch (Exception er) {
+			er.printStackTrace();
+		}
+
+		return "ejercicios";
+
+	}
+
+	@GetMapping("/mainPage")
+	public String perfil(ModelMap model, HttpServletRequest request) {
+		Usuario user = usuarioRepositorio.findByNick(request.getUserPrincipal().getName());
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+	   	model.addAttribute("token", token.getToken());
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("username", user.getNick());
+
+		return "mainPage";
+	}
+
 	@RequestMapping("/crearRutina")
 	public String RutinaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
 
-		model.addAttribute("rutinas",repositorio1.findAll());
-		Rutina rutina= new Rutina (nombre, descripcion);
-		repositorio1.save(rutina);		
+		Rutina rutina = new Rutina(nombre, descripcion);
+		repositorioRutina.save(rutina);
+		model.addAttribute("rutinas", repositorioRutina.findAll());
+
 		return "rutinas";
 	}
-	
+
 	@RequestMapping("/crearEjercicio")
 	public String EjercicioNuevo(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion) {
 
-		model.addAttribute("ejercicios",repositorio2.findAll());
-		Ejercicio ejercicio= new Ejercicio (nombre, descripcion);
-		repositorio2.save(ejercicio);		
+		Ejercicio ejercicio = new Ejercicio(nombre, descripcion);
+		repositorioEjercicio.save(ejercicio);
+		model.addAttribute("ejercicios", repositorioEjercicio.findAll());
 		return "ejercicios";
 	}
-	
-	@RequestMapping("/crearDieta")
-	public String DietaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion, @RequestParam String peso) {
-		model.addAttribute("dietas",repositorio3.findAll());
-		Dietas dieta= new Dietas (nombre, descripcion, peso );
-		repositorio3.save(dieta);
 
-			
+	@RequestMapping("/crearDieta")
+	public String DietaNueva(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion,
+			@RequestParam String peso) {
+
+		Dietas dieta = new Dietas(nombre, descripcion, peso);
+		repositorioDieta.save(dieta);
+
+		model.addAttribute("dietas", repositorioDieta.findAll());
 		return "dietas";
 	}
-	
-	@GetMapping("/redirregistro")
-		public String redirregistro(ModelMap model){
-		return "Registro_template";
-	}
-	
+
 	@GetMapping("/ejercicios")
-	public String ejercicios(ModelMap model) {
-		//model.addAttribute(repositorio2.findAll());
+	public String ejercicios(ModelMap model, HttpServletRequest request) {
+
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		model.addAttribute("ejercicios", repositorioEjercicio.findAll());
 		return "ejercicios";
 	}
-	
+
 	@GetMapping("/rutinas")
-	public String rutinas(ModelMap model) {
+	public String rutinas(ModelMap model, HttpServletRequest request) {
+
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
+		model.addAttribute("rutinas", repositorioRutina.findAll());
 		return "rutinas";
 	}
-	
+
 	@GetMapping("/dietas")
 	public String dietas(ModelMap model) {
+		model.addAttribute("dietas", repositorioDieta.findAll());
 		return "dietas";
 	}
-	
+
 	@GetMapping("/contacto")
 	public String contacto(ModelMap model) {
 		return "contacto";
 	}
 
-
-
 	@Override
-public void run(String... args) throws Exception {
-		
-		Rutina definicion= new Rutina("Rutina definicion","Esta rutina se basa en la realización de muchas repeticiones por serie con poco peso");
-		Rutina volumen= new Rutina("Rutina volumen","Esta rutina se basa en la realización de pocas repeticiones por serie con mucho peso");
-		Rutina perdida= new Rutina("Rutina perdida de peso","Esta rutina se basa en la realización de cardio y ejercicios aerobicos");
-		
-		Ejercicio remo= new Ejercicio("Remo","Espalda");
-		
-		Usuario user1= new Usuario("Sergio","1234");
-		Usuario user2= new Usuario("Luis","hola");
-		
-		/*Dietas hypercalorica= new Dietas("hypercalorica","potenciar","ganar");
-		Dietas hipocalorica= new Dietas("hipocalorica","reducir","perder");
-		Dietas mantenimiento= new Dietas("mantenimiento","mantener","perder o ganar");
-		
-		
-		
-		repositorio3.save(hypercalorica);
-		repositorio3.save(hipocalorica);
-		repositorio3.save(mantenimiento);*/
-		
-		
-		repositorio2.save(remo);
-		
-		volumen.setEjercicio(remo);
-		
-		repositorio1.save(volumen);
-		repositorio1.save(definicion);
-		repositorio1.save(perdida);
-		
-		//user1.setRutina(definicion);
-		//user2.setRutina(perdida);
-		
-		repositorio.save(user1);
-		repositorio.save(user2);
-		
-		
-		Usuario admin= new Usuario("admin", "admin");
-		repositorio.save(admin);
-		
+	public void run(String... args) throws Exception {
+
+		Rutina definicion = new Rutina("Rutina definicion",
+				"Esta rutina se basa en la realización de muchas repeticiones por serie con poco peso");
+		Rutina volumen = new Rutina("Rutina volumen",
+				"Esta rutina se basa en la realización de pocas repeticiones por serie con mucho peso");
+		Rutina perdida = new Rutina("Rutina perdida de peso",
+				"Esta rutina se basa en la realización de cardio y ejercicios aerobicos");
+
+		Ejercicio remo = new Ejercicio("Remo", "Espalda");
+		Ejercicio pressBanca = new Ejercicio("Press", "Pecho");
+		Ejercicio sentadillas = new Ejercicio("Sentadillas", "Pierna");
+		Ejercicio frances = new Ejercicio("Frances", "Brazo");
+
+		// Usuario user1 = new Usuario("Sergio", "1234");
+
+		Dietas hypercalorica = new Dietas("hypercalorica", "potenciar", "ganar");
+		Dietas hipocalorica = new Dietas("hipocalorica", "reducir", "perder");
+		Dietas mantenimiento = new Dietas("mantenimiento", "mantener", "perder o ganar");
+
+		repositorioDieta.save(hypercalorica);
+		repositorioDieta.save(hipocalorica);
+		repositorioDieta.save(mantenimiento);
+
+		repositorioEjercicio.save(remo);
+		repositorioEjercicio.save(pressBanca);
+		repositorioEjercicio.save(sentadillas);
+		repositorioEjercicio.save(frances);
+
+		// volumen.setEjercicio(remo);
+
+		repositorioRutina.save(volumen);
+		repositorioRutina.save(definicion);
+		repositorioRutina.save(perdida);
+
+		// user1.setRutina(definicion);
+		// user2.setRutina(perdida);
+
+		// usuarioRepositorio.save(user1);
+
+		// Usuario admin = new Usuario("admin", "admin");
+		// usuarioRepositorio.save(admin);
+
 	}
 }
