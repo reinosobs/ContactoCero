@@ -5,7 +5,7 @@
 			<title>Cabecera fija</title>
 				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" 
 				integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-				<link rel="stylesheet" href="estilosEjercicios.css">
+				<link rel="stylesheet" href="/estilos/estilosEjercicios.css">
 	</head>
 	
 	<body>
@@ -47,6 +47,7 @@
 						<p>Nick del ejercicio</p>
 						<input type="text" name='nombreEjer' placeholder="Introduce el nombre""> 
 						<input type="submit" value="Añadir">
+						<input type="hidden" name="_csrf" value="{{token}}"/>
 					</form>
 				</section>
 			</ul>
@@ -56,7 +57,7 @@
 					<li><a href="#"> <i class="fa fa-arrow-up fa-2x"></i> <spanclass="nav-text"> Tren Superior </span></a></li>
 					<li class="has-subnav"><a href="#"> <i class="fa fa-arrow-down fa-2x"></i> <span class="nav-text">Tren Inferior </span></a></li>
 					<li class="has-subnav"><a href="#"> <i class="fa fa-clock-o fa-2x"></i> <span class="nav-text">Cardio </span></a></li>
-					<li class="logout"><a href="#"> <i class="fa fa-power-off fa-2x"></i> <span class="nav-text">Logout </span></a></li>
+					<li class="logout"><a href="login"> <i class="fa fa-power-off fa-2x"></i> <span class="nav-text">Logout </span></a></li>
 				</ul>
 			</nav>
 		</main>

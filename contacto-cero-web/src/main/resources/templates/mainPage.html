@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8">
-			<title>Cabecera fija</title>
-		 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-		        <link rel="stylesheet" href="estilosMain.css">
-	</head>
-	 
-	<body>
-		<form action="/mainPage">
-			<header id="main-header">
-				<a id="logo-header" href="#"> <spam class="site-name">Perfil</spam> </a> <!-- / #logo-header -->
-				<a id="logo-titulo" href="#"> <spam class="titulo">Contacto Cero</spam> </a>
-				<nav>
-					<ul>
-						<li><a><p>Perfil</p></a></li>
-						<li><a href="ejercicios">Ejercicios <id ="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
-						<li><a href="rutinas">Rutinas<id="btn-rutinas"  type="submit" value="Rutinas"></a></li>
-						<li><a href="dietas">Dietas<id="btn-dietas"  type="submit" value="Dietas"></a></li>
-						<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"></a></li>
-					</ul>
-				</nav>
-	  
-			</header><!-- / #main-header -->
-		</form>
-		
-		<section id="main-content">
-			<section id="crearRutinaNueva">
-				<form action="/crearRutina">
-					<p>CREAR RUTINA</p>
-					<p>Nombre de la rutina</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion' placeholder="Introduce la descripción"> 
-					<input type="submit" value="Añadir">
-				</form>
-			</section>
-				
-			<section id="crearEjercicioNuevo">
-				<form action="/crearEjercicio">
-					<p>CREAR Ejercicio</p>
-					<p>Nombre del ejercicio</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion' placeholder="Introduce la descripción">
-					<input type="submit" value="Añadir">
-				</form>
-			</section>
-				
-			<section id="crearDietaNueva">
-				<form action="/crearDieta">
-					<p>CREAR DIETA</p>
-					<p>Nombre de la dieta</p>
-					<input type="text" name='nombre' placeholder="Introduce el nombre">
-					<p>Descripción</p>
-					<input type="text" name='descripcion'placeholder="Introduce la descripción">
-					<p>Enfoque de la rutina</p>
-					<input type="text" name='peso' placeholder="Introduce el peso">
-					<input type="submit" value="Añadir">
-				</form>
-			</section>
-			<nav class="main-menu">
-	            <ul>
-	                <li>
-	                    <a href="#"> <i class="fa fa-user fa-2x"></i> <span class="nav-text">Mi perfil</span></a>  
-	                </li>
-	                
-	                <li class="has-subnav">
-	                    <a href="#"> <i class="fa fa-list fa-2x"></i> <span class="nav-text">Mis rutinas</span></a>
-	                </li>
-	                
-	                <li class="has-subnav">
-	                	<a href="#"><i class="fa fa-bar-chart-o fa-2x"></i><span class="nav-text">Estadisticas</span></a>
-	                </li>
+<head>
+<meta charset="utf-8">
+<title>Cabecera fija</title>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="/estilos/estilosMain.css">
+</head>
+
+<body>
+	<form action="/mainPage">
+		<header id="main-header">
+			<a id="logo-header" href="#"> <spam class="site-name">Perfil</spam>
+			</a>
+			<!-- / #logo-header -->
+			<a id="logo-titulo" href="#"> <spam class="titulo">Contacto
+				Cero</spam>
+			</a>
+			<nav>
+				<ul>
+					<li><a><p>Perfil</p></a></li>
+					<li><a href="ejercicios">Ejercicios <id
+								="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
+					<li><a href="rutinas">Rutinas<id
+								="btn-rutinas"  type="submit" value="Rutinas"></a></li>
+					<li><a href="dietas">Dietas<id
+								="btn-dietas"  type="submit" value="Dietas"></a></li>
+					<li><a href="contacto">Contacto<id
+								="btn-contacto"  type="submit" value="Contacto"></a></li>
 				</ul>
-	                
-	            <form action="/login2">  
-	            	<li class="logout" >
-	                   <a href="login2"><i class="fa fa-power-off fa-2x"></i><span class="nav-text">Logout</span></a>
-	                </li> 
-				</form>
-	        </nav>
-	
-		</section> <!-- / #main-content -->
-	 
-	</body>
+			</nav>
+
+		</header>
+		<!-- / #main-header -->
+	</form>
+
+	<section id="main-content">
+		<section id="crearRutinaNueva">
+			<form action="/crearRutina">
+				<p>CREAR RUTINA</p>
+				<p>Nombre de la rutina</p>
+				<input type="text" name='nombre' placeholder="Introduce el nombre">
+				<p>Descripción</p>
+				<input type="text" name='descripcion'
+					placeholder="Introduce la descripción"> <input
+					type="submit" value="Añadir">
+			</form>
+		</section>
+
+		<section id="crearEjercicioNuevo">
+			<form action="/crearEjercicio">
+				<p>CREAR Ejercicio</p>
+				<p>Nombre del ejercicio</p>
+				<input type="text" name='nombre' placeholder="Introduce el nombre">
+				<p>Descripción</p>
+				<input type="text" name='descripcion'
+					placeholder="Introduce la descripción"> <input
+					type="submit" value="Añadir">
+			</form>
+		</section>
+
+		<section id="crearDietaNueva">
+			<form action="/crearDieta">
+				<p>CREAR DIETA</p>
+				<p>Nombre de la dieta</p>
+				<input type="text" name='nombre' placeholder="Introduce el nombre">
+				<p>Descripción</p>
+				<input type="text" name='descripcion'
+					placeholder="Introduce la descripción">
+				<p>Enfoque de la rutina</p>
+				<input type="text" name='peso' placeholder="Introduce el peso">
+				<input type="submit" value="Añadir">
+			</form>
+		</section>
+		<nav class="main-menu">
+			<ul>
+				<li><a href="#"> <i class="fa fa-user fa-2x"></i> <span
+						class="nav-text">Mi perfil</span></a></li>
+
+				<li class="has-subnav"><a href="#"> <i
+						class="fa fa-list fa-2x"></i> <span class="nav-text">Mis
+							rutinas</span></a></li>
+
+				<li class="has-subnav"><a href="#"><i
+						class="fa fa-bar-chart-o fa-2x"></i><span class="nav-text">Estadisticas</span></a>
+				</li>
+
+				<li class="has-subnav"><a href="#"><i
+						class="fa fa-power-off fa-2x"></i><span class="nav-text">Logout</span></a>
+				</li>
+
+			</ul>
+		</nav>
+		<form action="/logout" method="post">
+			<input type="submit" value="Sign Out" />
+			<input type="hidden" name="_csrf" value="{{token}}"/>
+		</form>
+
+	</section>
+	<!-- / #main-content -->
+
+</body>
 </html>
