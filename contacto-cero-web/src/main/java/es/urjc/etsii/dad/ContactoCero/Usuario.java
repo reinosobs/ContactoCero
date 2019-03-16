@@ -25,6 +25,7 @@ public class Usuario{
 	
 	private String nick;
 	private String passwordHash;
+	private String correo;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
@@ -33,9 +34,10 @@ public class Usuario{
 	
 	protected Usuario() {}
 	
-	public Usuario (String nick, String password, String... roles) {
+	public Usuario (String nick, String password, String correo, String... roles) {
 		this.nick = nick;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.correo=correo;
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
@@ -46,6 +48,13 @@ public class Usuario{
     public void setNick(String nick) {
         this.nick = nick;
     }
+    public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+}
     
 	public List<String> getRoles() {
 		return roles;

@@ -15,8 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class WebController implements CommandLineRunner {
@@ -30,6 +32,37 @@ public class WebController implements CommandLineRunner {
 	@Autowired
 	private DietasRepositorio repositorioDieta;
 
+	@PostMapping("/guardarusuario")
+	public String guardarUsuario(Model model, @RequestParam String name, @RequestParam String pass,
+			@RequestParam String correo, HttpServletRequest request) {
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+	   	model.addAttribute("token", token.getToken());
+	   	
+		usuarioRepositorio.save(new Usuario(name,pass,correo,"USER"));
+
+		RestTemplate rt=new RestTemplate();
+	    String url= "http://localhost:8080/envioCorreo?correo="+correo+"&nombre="+name;
+	    Boolean b=rt.getForObject(url, Boolean.class);
+		
+		return "mainPage";
+	}
+	/*@RequestMapping("/registro")
+	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, HttpServletRequest request) {
+
+	   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+	   	 model.addAttribute("token", token.getToken());
+
+		model.put("name", name);
+		model.put("pass", pass);
+		if (name != null || pass != null) {
+			Usuario u = new Usuario(name, pass,"ROLE_USER" );
+			usuarioRepositorio.save(u);
+			return "mainPage";
+		}
+		return "login";
+	}*/
+	
 	@GetMapping("/")
 	public String cerrarSesion() {
 		return "cerrarSesion";
@@ -51,21 +84,7 @@ public class WebController implements CommandLineRunner {
 		return "Registro_template";
 	}
 
-	@RequestMapping("/registro")
-	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, HttpServletRequest request) {
-
-	   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	   	 model.addAttribute("token", token.getToken());
-
-		model.put("name", name);
-		model.put("pass", pass);
-		if (name != null || pass != null) {
-			Usuario u = new Usuario(name, pass,"ROLE_USER" );
-			usuarioRepositorio.save(u);
-			return "mainPage";
-		}
-		return "login";
-	}
+	
 
 	@GetMapping("/errorLogin")
 	public String errorLoging() {
@@ -219,7 +238,6 @@ public class WebController implements CommandLineRunner {
 		// user1.setRutina(definicion);
 		// user2.setRutina(perdida);
 
-		// usuarioRepositorio.save(user1);
 
 	
 
