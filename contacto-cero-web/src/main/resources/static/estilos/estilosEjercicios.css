@@ -126,6 +126,19 @@ nav {
 
 /* LISTA VERTICAL DE BOTONES -----------------------------------------------------------------------------------------------------------------*/
 
+#btnLogout{
+	left: 0;
+	background: #333;
+	text-decoration: none;
+	border: 0;
+	color:#999;
+}	
+
+#btnLogout:hover {
+	color:#fff;
+	background-color:#5fa2db;
+}
+
 .fa-2x {
 	font-size: 2em;
 }
