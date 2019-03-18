@@ -25,13 +25,16 @@ import com.sun.mail.smtp.SMTPTransport;
 public class MailController {
 
 		
-		//@Value("${password}")
-		//private String password= "Contactocero1234";
+		@Value("${password}")
+		private String password;
 		
 		@CrossOrigin
 		@ResponseStatus(HttpStatus.CREATED)
 		@RequestMapping(value = "/envioCorreo", method = RequestMethod.GET) 
 		public ResponseEntity<Boolean> sendMail(@RequestParam String correo, @RequestParam String nombre) {
+			
+			System.out.println("Datos recibidos!");
+			System.out.println("Nombre: " + nombre + "  Email: " + correo);
 			
 			try {
 
@@ -55,7 +58,7 @@ public class MailController {
 
 				// -- Set the FROM and TO fields --
 				msg.setFrom(new InternetAddress("contactocerodad@gmail.com"));
-				msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correo));
+				msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correo, false));
 
 				msg.setSubject("Bienvenido a ContactoCero");
 				msg.setText(
@@ -66,7 +69,7 @@ public class MailController {
 
 				SMTPTransport t = (SMTPTransport) session.getTransport("smtps");
 
-				t.connect("smtp.gmail.com", "contactocerodad@gmail.com", "Contactocero1234");
+				t.connect("smtp.gmail.com", "contactocerodad@gmail.com", password);
 				t.sendMessage(msg,	 msg.getAllRecipients());
 				t.close();
 
