@@ -88,20 +88,17 @@
 				<li class="has-subnav"><a href="#"><i
 						class="fa fa-bar-chart-o fa-2x"></i><span class="nav-text">Estadisticas</span></a>
 				</li>
-				
-				
-				<form action="/logout" method="post">
-					<li class="has-subnav"><a href="#"><i 
-							class="fa fa-power-off fa-2x"></i><input type="submit" class="nav-text" id="btnLogout" value="Logout" /></a>
-							<input type="hidden" name="_csrf" value="{{token}}"/>
-					</li>
-				</form>
-				
-				
+
+				<li class="has-subnav"><a href="#"><i
+						class="fa fa-power-off fa-2x"></i><span class="nav-text">Logout</span></a>
+				</li>
 
 			</ul>
 		</nav>
-		
+		<form action="/logout" method="post">
+			<input type="submit" value="Sign Out" />
+			<input type="hidden" name="_csrf" value="{{token}}"/>
+		</form>
 
 	</section>
 	<!-- / #main-content -->

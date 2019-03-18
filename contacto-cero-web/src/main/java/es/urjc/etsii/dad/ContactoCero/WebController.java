@@ -32,23 +32,25 @@ public class WebController implements CommandLineRunner {
 	@Autowired
 	private DietasRepositorio repositorioDieta;
 
-	@PostMapping("/guardarusuario")
+	/*@PostMapping("/guardarusuario")
 	public String guardarUsuario(Model model, @RequestParam String name, @RequestParam String pass,
 			@RequestParam String correo, HttpServletRequest request) {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 	   	model.addAttribute("token", token.getToken());
-	   	
-		usuarioRepositorio.save(new Usuario(name,pass,correo,"USER"));
+	   	Usuario u= new Usuario(name,pass,correo,"USER");
+		usuarioRepositorio.save(u);
 
 		RestTemplate rt=new RestTemplate();
-	    String url= "http://localhost:8080/envioCorreo?correo="+correo+"&nombre="+name;
+		
+	    String url= "http://192.168.33.17/envioCorreo/" + name + "/" + correo;
+	    
 	    Boolean b=rt.getForObject(url, Boolean.class);
 		
 		return "mainPage";
-	}
-	/*@RequestMapping("/registro")
-	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, HttpServletRequest request) {
+	}*/
+	@RequestMapping("/registro")
+	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, @RequestParam String correo, HttpServletRequest request) {
 
 	   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 	   	 model.addAttribute("token", token.getToken());
@@ -56,12 +58,16 @@ public class WebController implements CommandLineRunner {
 		model.put("name", name);
 		model.put("pass", pass);
 		if (name != null || pass != null) {
-			Usuario u = new Usuario(name, pass,"ROLE_USER" );
+			Usuario u = new Usuario(name, pass, correo, "ROLE_USER" );
 			usuarioRepositorio.save(u);
+			RestTemplate rt=new RestTemplate();
+		    String url= "http://localhost:8080/envioCorreo?correo="+correo+"&nombre="+name;
+		    Boolean b=rt.getForObject(url, Boolean.class);
 			return "mainPage";
 		}
 		return "login";
-	}*/
+
+	}
 	
 	@GetMapping("/")
 	public String cerrarSesion() {
