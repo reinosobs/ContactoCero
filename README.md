@@ -16,13 +16,8 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    
    - **Dietas**: Distintos tipos de dietas acordes a lo que desea el usuario.
 
-   - **Contacto**: Redes Sociales y métodos de contacto directo por correo electrónico. 
-
 ### 4. Funcionalidades
-   - Generación de rutinas creadas por el usuario con posibilidad de descarga en formato PDF.
-   - Cálculo de estadísticas a partir de datos consultados tras una rutina
-   - Seguimiento de realización de rutinas diarias.
-   - Generación de rutinas automáticas a partir de parámetros que nos facilita el usuario con posibilidad de descarga en formato PDF.
+   - Envio de correo de bienvenida al correo del usuario nuevo registrado.
 ### 5. Integrantes
    * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / https://github.com/reinosobs
 
