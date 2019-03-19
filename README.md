@@ -67,7 +67,7 @@ Diagrama de navegación
 
 Diagrama E/R
 
-![uml](https://user-images.githubusercontent.com/45769039/53121245-12c5f900-3554-11e9-89d0-4cd17b4c08b5.png)
+![uml](https://user-images.githubusercontent.com/46925882/54608499-1ebcb200-4a51-11e9-94f5-74f09e93ca60.JPG)
 
 Diagrama UML
 
