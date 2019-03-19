@@ -75,5 +75,5 @@ Diagrama UML
 
    - Descargar Vagrant
    - Descargar el jar de la aplicación web y del servicio interno
-   - Ejecutar los comandos vagrant up, para preparar la máquina, y luego vagrant ssh, para iniciarla
+   - Ejecutar los comandos *vagrant up*, para preparar la máquina, y luego *vagrant ssh*, para iniciarla
    - Ejecutar java_jar "nombre del jar"
