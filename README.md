@@ -70,3 +70,7 @@ Diagrama E/R
 ![uml](https://user-images.githubusercontent.com/45769039/53121245-12c5f900-3554-11e9-89d0-4cd17b4c08b5.png)
 
 Diagrama UML
+
+### Instrucciones para levantar la aplicación en VM
+
+   - 
