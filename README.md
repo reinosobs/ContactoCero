@@ -74,8 +74,27 @@ Diagrama UML
 ### Instrucciones para levantar la aplicación en VM
 
    - Descargar Vagrant
-   - Descargar el jar de la aplicación web y del servicio interno
+   
    - Ejecutar los comandos *vagrant up*, para preparar la máquina, y luego *vagrant ssh*, para iniciarla
-   - Descargar paquetes de jdk
-   - Descargar mySQL
-   - Ejecutar java_jar "nombre del jar" para iniciar la aplicación.
+   
+   - Descargar la última versión de java mediante los comandos:
+      *sudo apt-get update*
+      *sudo apt-get install -y openjdk-8-jre*
+      
+   - Instalar mySQL y crear la base de datos usando:
+      *sudo apt-get install mysql-server*
+      *mysql -h localhost -u root -p*
+      (deberemos introducir la contraseña de teníamos en el *apliccation-properties*)
+      
+      *mysql> CREATE DATABASE usbbdd;*
+      *mysql> USE mysql;*
+      *mysql> SELECT User, Host, plugin FROM mysql.user;*
+      *mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';*
+      *mysql> FLUSH PRIVILEGES;*
+      *mysql> Exit*
+      
+   - Generar el jar de la aplicación web y del servicio interno
+   
+   - Ejecutar: *java -jar contacto-cero-web-0.0.1-SNAPSHOT.jar & java -jar servicio-interno2-0.0.1-SNAPSHOPT.jar*
+   
+                                    ###Aplicación web iniciada
