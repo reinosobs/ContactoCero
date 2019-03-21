@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+			<title>Cabecera fija</title>
+				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" 
+				integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+				<link rel="stylesheet" href="/estilos/estilosEjercicios.css">
+	</head>
+<body>
+<h1>Pagina exclusiva para administradores, vuelve a la página principal si no eres administrador</h1>
+			<p href="#" id="error2"></p>
+				<a href="mainPage" id="btnVolver">Volver</a>
+	{{#admin}} 
+	<a href="/adminPage">Admin Page</a>
+	{{/admin}}
+	<!-- <a href="/adminPage">Admin Page</a> -->
+</body>
+</html>
