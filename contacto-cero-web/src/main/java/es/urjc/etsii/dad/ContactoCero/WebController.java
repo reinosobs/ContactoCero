@@ -32,43 +32,27 @@ public class WebController implements CommandLineRunner {
 	@Autowired
 	private DietasRepositorio repositorioDieta;
 
-	/*@PostMapping("/guardarusuario")
-	public String guardarUsuario(Model model, @RequestParam String name, @RequestParam String pass,
-			@RequestParam String correo, HttpServletRequest request) {
-		
-		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	   	model.addAttribute("token", token.getToken());
-	   	Usuario u= new Usuario(name,pass,correo,"USER");
-		usuarioRepositorio.save(u);
-
-		RestTemplate rt=new RestTemplate();
-		
-	    String url= "http://192.168.33.17/envioCorreo/" + name + "/" + correo;
-	    
-	    Boolean b=rt.getForObject(url, Boolean.class);
-		
-		return "mainPage";
-	}*/
+	
 	@RequestMapping("/registro")
-	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass, @RequestParam String correo, HttpServletRequest request) {
+	public String registro(ModelMap model, @RequestParam String name, @RequestParam String pass,
+			@RequestParam String correo, HttpServletRequest request) {
 
-	   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	   	 model.addAttribute("token", token.getToken());
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
 
 		model.put("name", name);
 		model.put("pass", pass);
 		if (name != null || pass != null) {
-			Usuario u = new Usuario(name, pass, correo, "ROLE_USER" );
+			Usuario u = new Usuario(name, pass, correo, "USER");
 			usuarioRepositorio.save(u);
-			RestTemplate rt=new RestTemplate();
-		    String url= "http://localhost:8080/envioCorreo?correo="+correo+"&nombre="+name;
-		    Boolean b=rt.getForObject(url, Boolean.class);
+			RestTemplate rt = new RestTemplate();
+			String url = "http://localhost:8080/envioCorreo?correo=" + correo + "&nombre=" + name;
+			Boolean b = rt.getForObject(url, Boolean.class);
 			return "mainPage";
 		}
 		return "login";
-
 	}
-	
+
 	@GetMapping("/")
 	public String cerrarSesion() {
 		return "cerrarSesion";
@@ -85,12 +69,10 @@ public class WebController implements CommandLineRunner {
 	@GetMapping("/redirregistro")
 	public String redirregistro(ModelMap model, HttpServletRequest request) {
 
-   	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-   	 model.addAttribute("token", token.getToken());
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken());
 		return "Registro_template";
 	}
-
-	
 
 	@GetMapping("/errorLogin")
 	public String errorLoging() {
@@ -98,11 +80,12 @@ public class WebController implements CommandLineRunner {
 	}
 
 	@RequestMapping("/cogerRutina")
-	public String cogerRutina(Model model, @RequestParam String nombreRutina, @RequestParam String nombreUser, HttpServletRequest request) {
+	public String cogerRutina(Model model, @RequestParam String nombreRutina, @RequestParam String nombreUser,
+			HttpServletRequest request) {
 		model.addAttribute("usuario", usuarioRepositorio.findAll());
 		model.addAttribute("rutinas", repositorioRutina.findAll());
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	   	model.addAttribute("token", token.getToken());
+		model.addAttribute("token", token.getToken());
 		Usuario u = usuarioRepositorio.findByNick(nombreUser);
 		Rutina r = repositorioRutina.findByRutina(nombreRutina);
 		try {
@@ -138,11 +121,10 @@ public class WebController implements CommandLineRunner {
 
 	@GetMapping("/mainPage")
 	public String perfil(ModelMap model, HttpServletRequest request) {
-		Usuario user = usuarioRepositorio.findByNick(request.getUserPrincipal().getName());
+				
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	   	model.addAttribute("token", token.getToken());
+		model.addAttribute("token", token.getToken());		
 		model.addAttribute("admin", request.isUserInRole("ADMIN"));
-		model.addAttribute("username", user.getNick());
 
 		return "mainPage";
 	}
@@ -206,6 +188,18 @@ public class WebController implements CommandLineRunner {
 		return "contacto";
 	}
 
+	/*@GetMapping("/admin")
+	public String admin(Model model, HttpServletRequest request) {
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		return "admin";
+	}*/
+
+	@GetMapping("/adminPage")
+	public String admin(ModelMap model) {
+		model.addAttribute("usuarios", usuarioRepositorio.findAll()); //no borrar
+		return "adminPage";
+	}
+
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -220,7 +214,6 @@ public class WebController implements CommandLineRunner {
 		Ejercicio pressBanca = new Ejercicio("Press", "Pecho");
 		Ejercicio sentadillas = new Ejercicio("Sentadillas", "Pierna");
 		Ejercicio frances = new Ejercicio("Frances", "Brazo");
-
 
 		Dietas hypercalorica = new Dietas("hypercalorica", "potenciar", "ganar");
 		Dietas hipocalorica = new Dietas("hipocalorica", "reducir", "perder");
@@ -243,9 +236,6 @@ public class WebController implements CommandLineRunner {
 
 		// user1.setRutina(definicion);
 		// user2.setRutina(perdida);
-
-
-	
 
 	}
 }

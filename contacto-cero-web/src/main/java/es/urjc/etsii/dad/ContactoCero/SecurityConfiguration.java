@@ -29,7 +29,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/logout").permitAll();
 		
 		// Private pages (all other pages)
-		http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().anyRequest().authenticated();
+		http.authorizeRequests().antMatchers("/mainPage").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers("/adminPage").hasAnyRole("ADMIN");
+		
+		
 		// Login form
 		http.formLogin().loginPage("/login");
 		http.formLogin().usernameParameter("name");
@@ -46,8 +50,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
     	
-        // Database authentication provider
-        auth.authenticationProvider(authenticationProvider);
+        // Users
+    	auth.authenticationProvider(authenticationProvider);
     }
 
 }

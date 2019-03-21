@@ -76,6 +76,16 @@
 				<input type="submit" value="Añadir">
 			</form>
 		</section>
+
+
+		<!-- <p>
+			Opciones de administrador <a href="/admin"> ACCEDER</a>
+		</p> -->
+		
+		{{#admin}} 
+		<a href="/adminPage">Admin Page</a> 
+		{{/admin}}
+
 		<nav class="main-menu">
 			<ul>
 				<li><a href="#"> <i class="fa fa-user fa-2x"></i> <span
@@ -89,16 +99,19 @@
 						class="fa fa-bar-chart-o fa-2x"></i><span class="nav-text">Estadisticas</span></a>
 				</li>
 
-				<li class="has-subnav"><a href="#"><i
-						class="fa fa-power-off fa-2x"></i><span class="nav-text">Logout</span></a>
-				</li>
+
+				<form action="/logout" method="post">
+					<li class="has-subnav"><a href="#"><i
+							class="fa fa-power-off fa-2x"></i><input type="submit"
+							class="nav-text" id="btnLogout" value="Logout" /></a> <input
+						type="hidden" name="_csrf" value="{{token}}" /></li>
+				</form>
+
+
 
 			</ul>
 		</nav>
-		<form action="/logout" method="post">
-			<input type="submit" value="Sign Out" />
-			<input type="hidden" name="_csrf" value="{{token}}"/>
-		</form>
+
 
 	</section>
 	<!-- / #main-content -->
