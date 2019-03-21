@@ -86,7 +86,7 @@ Diagrama UML
    
          sudo apt-get install mysql-server
          mysql -h localhost -u root -p
-         (deberemos introducir la contraseña de teníamos en el *apliccation-properties*)
+         (deberemos introducir la contraseña de teníamos en el apliccation-properties)
       
          mysql> CREATE DATABASE usbbdd;
          mysql> USE mysql;
