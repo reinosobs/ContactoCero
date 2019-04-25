@@ -1,16 +1,18 @@
 <html>
 	<head>
 		<title>Registro Form Design</title>
-		<link rel="stylesheet" type="text/css" href="estilo2.css">
+		<link rel="stylesheet" type="text/css" href="/estilos/estilo2.css">
 		<body>
 			<div class="loginbox">
 			<img src="imagenes/avatar2.png" class="avatar">
 			<h1>Registro</h1>
-				<form action="/registro">
+				<form action="registro"> <!-- method="post" -->
 					<p>Usuario</p>
 					<input type="text" name='name' placeholder="&#129333; Introduce el usuario">
-					<p>Constraseña</p>
-					<input type="password" name='pass' placeholder="&#128273; Introduce la contraseña">
+					<p>Constrasena</p>
+					<input type="password" name='pass' placeholder="&#128273; Introduce la contrasena">
+					<p>Correo:</p>
+					<input type="text" name='correo' placeholder="&#128273; Introduce tu email">
 					<input type="submit" value="Register">
 				</form>
 			</div>

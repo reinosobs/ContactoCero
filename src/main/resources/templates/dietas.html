@@ -1,158 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<title>Cabecera fija</title>
-<link
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="estilosDietas.css">
-</head>
-
-<body>
-	<form action="/dietas">
-		<header id="main-header">
-
-			<a id="logo-header" href="#"> <spam class="site-name">Dietas</spam>
-			</a>
-			<!-- / #logo-header -->
-
-			<a id="logo-titulo" href="#"> <spam class="titulo">Contacto
-				Cero</spam>
-			</a>
-
-			<nav>
+	<head>
+		<meta charset="utf-8">
+			<title>Cabecera fija</title>
+				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" 
+				integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+				<link rel="stylesheet" href="/estilos/estilosDietas.css">
+	</head>
+	
+	<body>
+		<form action="/dietas">
+			<header id="main-header">
+				<a id="logo-header" href="#"> <spam class="site-name">Dietas</spam></a><!-- / #logo-header -->
+				<a id="logo-titulo" href="#"> <spam class="titulo">ContactoCero</spam></a>
+				<nav>
+					<ul>
+						<li><a href="mainPage">Perfil<id="btn-ejercicios" type="submit" value="Perfil"><p></p></a></li>
+						<li><a href="ejercicios">Ejercicios <id="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
+						<li><a href="rutinas">Rutinas<id="btn-rutinas"  type="submit" value="Rutinas"></a></li>
+						<li><a><p>Dietas</p></a></li>
+						<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"></a></li>
+					</ul>
+				</nav><!-- / nav -->
+			</header><!-- / #main-header -->
+		</form>
+	
+		<section id="main-content">
+			<ul id="forma-rutinas" href="#" class="article-list-vertical">
+				<div class="ventana" id="vent">
+					<div id="cerrar">
+						<a href="javascript:cerrar()"><img src="imagenes/cancel.png"></a>
+					</div>
+					<p>DESCRIPCIÓN</p>
+				</div>
+				
+				<section href="#" id="nuevaDieta">
+					{{#dietas}}
+					<p>Nombre: {{dieta}}</p>
+					<p>Descripción: {{finalidad}}</p>
+					<p>Peso:{{peso}}</p>
+					<a class="botonDieta" href="javascript:abrir4()">Ver dieta →</a>
+					<a class="botonDieta" href="#">Descargar dieta →</a>
+					<section href="#" id="espacioBlanco">-</section>
+					{{/dietas}}		
+				</section>
+			</ul>
+			
+			<nav class="main-menu">
 				<ul>
-
-					<li><a href="mainPage">Perfil<id
-								="btn-ejercicios" type="submit" value="Perfil">
-							<p></p></a></li>
-					<li><a href="ejercicios">Ejercicios <id
-								="btn-ejercicios" type="submit" value="Ejercicios"></a></li>
-					<li><a href="rutinas">Rutinas<id
-								="btn-rutinas"  type="submit" value="Rutinas"></a></li>
-					<li><a><p>Dietas</p></a></li>
-					<li><a href="contacto">Contacto<id
-								="btn-contacto"  type="submit" value="Contacto"></a></li>
-				</ul>
+					<li><a href="#"> <i class="fa fa-plus fa-2x"></i> <span class="nav-text"> Hipercalórica </span></a></li>
+					<li class="has-subnav"><a href="#"> <i class="fa fa-minus fa-2x"></i> <span class="nav-text">Hipocalórica </span></a></li>
+					<li class="has-subnav"><a href="#"> <i class="fa fa-check fa-2x"></i> <span class="nav-text">Mantenimiento </span></a></li>
 			</nav>
-			<!-- / nav -->
-
-		</header>
-		<!-- / #main-header -->
-	</form>
-
-	<section id="main-content">
-		<ul id="forma-rutinas" href="#" class="article-list-vertical">
-		
-			<div class="ventana" id="vent">
-			<div id="cerrar">
-				<a href="javascript:cerrar()"><img src="imagenes/cancel.png"></a>
-			</div>
-			<p>DESCCRIPCIÓN</p>
-
-		</div>
-		
-		<div class="ventana2" id="vent2">
-				<div id="cerrar">
-					<a href="javascript:cerrar2()"><img src="imagenes/cancel.png"></a>
-				</div>
-				<p>DESCCRIPCIÓN</p>
-
-			</div>
-
-			<div class="ventana3" id="vent3">
-				<div id="cerrar">
-					<a href="javascript:cerrar3()"><img src="imagenes/cancel.png"></a>
-				</div>
-				<p>DESCCRIPCIÓN</p>
-
-			</div>
+	
+		</section><!-- / #main-content -->
+	
+		<script>
+			function abrir() {
+				document.getElementById("vent").style.display = "block";
+			}
+	
+			function cerrar() {
+				document.getElementById("vent").style.display = "none";
+			}
 			
-			<div class="ventana4" id="vent4">
-				<div id="cerrar">
-					<a href="javascript:cerrar4()"><img src="imagenes/cancel.png"></a>
-				</div>
-				<p>DESCCRIPCIÓN</p>
-
-			</div>		
-		
-			
-			<section href="#" id="nuevaDieta">
-				{{#dietas}}
-				<p>Nombre: {{dieta}}</p>
-				<p>Descripción: {{finalidad}}</p>
-				<p>Peso:{{peso}}</p>
-				<a class="botonDieta" href="javascript:abrir4()">Ver dieta →</a>
-				<a class="botonDieta" href="#">Descargar dieta →</a>
-				<section href="#" id="espacioBlanco">-</section>
-				{{/dietas}}		
-			</section>
-			
-
-		</ul>
-		<nav class="main-menu">
-			<ul>
-				<li><a href="#"> <i class="fa fa-plus fa-2x"></i> <span
-						class="nav-text"> Hipercalórica </span>
-				</a></li>
-				<li class="has-subnav"><a href="#"> <i
-						class="fa fa-minus fa-2x"></i> <span class="nav-text">
-							Hipocalórica </span>
-				</a></li>
-				<li class="has-subnav"><a href="#"> <i
-						class="fa fa-check fa-2x"></i> <span class="nav-text">
-							Mantenimiento </span>
-				</a></li>
-
-
-				<li class="logout"><a href="#"> <i
-						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
-							Logout </span>
-				</a></li>
-		</nav>
-
-	</section>
-	<!-- / #main-content -->
-
-
-	<script>
-		function abrir() {
-			document.getElementById("vent").style.display = "block";
-		}
-
-		function cerrar() {
-			document.getElementById("vent").style.display = "none";
-		}
-		
-		unction abrir2() {
-			document.getElementById("vent2").style.display = "block";
-		}
-
-		function cerrar2() {
-			document.getElementById("vent2").style.display = "none";
-		}
-
-		function abrir3() {
-			document.getElementById("vent3").style.display = "block";
-		}
-
-		function cerrar3() {
-			document.getElementById("vent3").style.display = "none";
-		}
-		
-		function abrir3() {
-			document.getElementById("vent4").style.display = "block";
-		}
-
-		function cerrar3() {
-			document.getElementById("vent4").style.display = "none";
-		}
-
-	</script>
-
-
-</body>
+		</script>
+	</body>
 </html>

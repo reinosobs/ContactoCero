@@ -1,101 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<title>Cabecera fija</title>
-<link
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="estilosEjercicios.css">
-</head>
-
-<body>
-	<form action="/ejercicios">
-		<header id="main-header">
-
-			<a id="logo-header" href="#"> <span class="site-name">Ejercicios</span>
-			</a>
-			<!-- / #logo-header -->
-
-			<a id="logo-titulo" href="#"> <span class="titulo">Contacto
-					Cero</span>
-			</a>
-
-			<nav>
+	<head>
+		<meta charset="utf-8">
+			<title>Cabecera fija</title>
+				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" 
+				integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+				<link rel="stylesheet" href="/estilos/estilosEjercicios.css">
+	</head>
+	
+	<body>
+		<form action="/ejercicios">
+			<header id="main-header">
+				<a id="logo-header" href="#"> <span class="site-name">Ejercicios</span></a><!-- / #logo-header -->
+				<a id="logo-titulo" href="#"> <span class="titulo">Contacto Cero</span></a>
+				<nav>
+					<ul>
+						<li><a href="mainPage">Perfil<id="btn-ejercicios" type="submit" value="Perfil"><p></p></a></li>
+						<li><a><p>Ejercicios</p></a></li>
+						<li><a href="rutinas">Rutinas<id="btn-rutinas"  type="submit" value="Rutinas"><p></p></a></li>
+						<li><a href="dietas">Dietas<id="btn-dietas"  type="submit" value="Dietas"></a></li>
+						<li><a href="contacto">Contacto<id="btn-contacto"  type="submit" value="Contacto"><p></p></a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- / #main-header -->
+			
+		</form>
+		
+		<main id="main-content">
+			<ul id="forma-ejercicios" href="#" class="image-list-small">
+				<section href="#" id="nuevoEjercicio">
+					{{#ejercicios}}
+					<p>Nombre: {{nombre}}</p>
+					<p>Musculo: {{musculo}}</p>
+					<a class="botonEjercicio" href="#">Ver dieta →</a>
+					<a class="botonEjercicio" href="#">Descargar dieta →</a>
+					<section href="#" id="espacioBlanco">-</section>
+					{{/ejercicios}}		
+				</section>
+				
+				<section id="asignarEjercicioRut">
+					<form action="/asignarEjeraRut">
+						<p>Asignacion de Ejercicio a Rutina</p>
+						<p>Nombre de la rutina</p>
+						<input type="text" name='nombreRutina' placeholder="Introduce el nombre">
+						<p>Nick del ejercicio</p>
+						<input type="text" name='nombreEjer' placeholder="Introduce el nombre""> 
+						<input type="submit" value="Añadir">
+					</form>
+				</section>
+			</ul>
+	
+			<nav class="main-menu">
 				<ul>
-
-					<li><a href="mainPage">Perfil<id
-								="btn-ejercicios" type="submit" value="Perfil">
-							<p></p></a></li>
-					<li><a><p>Ejercicios</p></a></li>
-					<li><a href="rutinas">Rutinas<id
-								="btn-rutinas"  type="submit" value="Rutinas">
-							<p></p></a></li>
-					<li><a href="dietas">Dietas<id
-								="btn-dietas"  type="submit" value="Dietas"></a></li>
-					<li><a href="contacto">Contacto<id
-								="btn-contacto"  type="submit" value="Contacto">
-							<p></p></a></li>
-
+					<li><a href="#"> <i class="fa fa-arrow-up fa-2x"></i> <span class="nav-text"> Tren Superior </span></a></li>
+					<li class="has-subnav"><a href="#"> <i class="fa fa-arrow-down fa-2x"></i> <span class="nav-text">Tren Inferior </span></a></li>
+					<li class="has-subnav"><a href="#"> <i class="fa fa-clock-o fa-2x"></i> <span class="nav-text">Cardio </span></a></li>
 				</ul>
 			</nav>
-
-		</header>
-		<!-- / #main-header -->
-	</form>
-		<main id="main-content">
-		<ul id="forma-ejercicios" href="#" class="image-list-small">
-			
-			
-			<section href="#" id="nuevaDieta">
-				{{#ejercicios}}
-				<p>Nombre: {{nombre}}</p>
-				<p>Musculo: {{musculo}}</p>
-				<a class="botonDieta" href="#">Ver dieta →</a>
-				<a class="botonDieta" href="#">Descargar dieta →</a>
-				<section href="#" id="espacioBlanco">-</section>
-				{{/ejercicios}}		
-			</section>
-			
-			<section id="asignarRutina">
-			<form action="/asignarEjeraRut">
-					<p>Asignacion de Ejercicio a Rutina</p>
-					<p>Nombre de la rutina</p>
-					<input type="text" name='nombreRutina' placeholder="Introduce el nombre">
-					<p>Nick del ejercicio</p>
-					<input type="text" name='nombreEjer' placeholder="Introduce el nombre""> 
-					<input type="submit" value="Añadir">
-				</form>
-			</section>
-			
-		</ul>
-
-		<nav class="main-menu">
-			<ul>
-				<li><a href="#"> <i class="fa fa-arrow-up fa-2x"></i> <span
-						class="nav-text"> Tren Superior </span>
-				</a></li>
-				<li class="has-subnav"><a href="#"> <i
-						class="fa fa-arrow-down fa-2x"></i> <span class="nav-text">
-							Tren Inferior </span>
-				</a></li>
-				<li class="has-subnav"><a href="#"> <i
-						class="fa fa-clock-o fa-2x"></i> <span class="nav-text">
-							Cardio </span>
-				</a></li>
-
-				<li class="logout"><a href="#"> <i
-						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
-							Logout </span>
-				</a></li>
-			</ul>
-		</nav>
-
 		</main>
-	
-
-</body>
+	</body>
 </html>
 
