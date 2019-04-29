@@ -1,13 +1,13 @@
 ## ContactoCero
 Es una aplicación web orientada al control de rutinas de gimnasio, así como al asesoramiento de las distintas formas de entrenamiento  
 
-### 1. Parte publica
+## 1. Parte publica
 Login, registro y algunos ejemplos de las distintas rutinas básicas con las que trabajamos para usuarios no registrados en la web y nuestras redes sociales.
 
-### 2. Parte privada
+## 2. Parte privada
 Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes rutinas, los progresos conseguidos hasta el momento y un planificador de entrenamientos.
 
-### 3. Entidades principales
+## 3. Entidades principales
    - **Usuario**: Integrante registrado en nuestra aplicación.
 
    - **Rutina**: Conjunto de ejercicios que se recomienda a cada usuario dependiendo de sus objetivos.
@@ -16,16 +16,10 @@ Tras acceder cada usuario con sus credenciales propias puede ver sus diferentes 
    
    - **Dietas**: Distintos tipos de dietas acordes a lo que desea el usuario.
 
-### 4. Funcionalidades
+## 4. Funcionalidades
    - Envio de correo de bienvenida al correo del usuario nuevo registrado.
-### 5. Integrantes
-   * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / https://github.com/reinosobs
 
-   * David Palacios Moreno / d.palaciosm@alumnos.urjc.es / https://github.com/d-palaciosm
-
-   * Luis Santos Moreno / l.santosmor@alumnos.urjc.es / https://github.com/LuisitoSantos
-
-### Apartados de la web
+## 5. Apartados de la web
 
 
 ![login](https://user-images.githubusercontent.com/45769039/53116616-5ebf7080-3549-11e9-9fab-161a98a9f7c3.PNG)
@@ -57,7 +51,7 @@ En el apartado de dietas, podemos acceder a las diferentes dietas que nos ofrece
 En el apartado de contacto, vemos referencias a las diferentes redes sociales relacionadas con el gimnasio. También se pueden ver las publicaciones que hacen los usuarios en las redes sociales con el hashtag de la web.
 
 
-### Diagramas
+## 6. Diagramas
 
 ![navegacion fase2](https://user-images.githubusercontent.com/45769039/53118456-6d0f8b80-354d-11e9-85ad-8b3dda7d6f0e.jpeg)
 
@@ -71,7 +65,7 @@ Diagrama E/R
 
 Diagrama UML
 
-### Instrucciones para levantar la aplicación en VM
+## 7. Instrucciones para levantar la aplicación en VM
 
    - Descargar Vagrant
    
@@ -102,3 +96,23 @@ Diagrama UML
           java -jar contacto-cero-web-0.0.1-SNAPSHOT.jar & java -jar servicio-interno2-0.0.1-SNAPSHOPT.jar
    
    - Aplicación web iniciada
+## 8. Instrucciones de Dockers
+   ### Instalacion de Docker
+   A traves de la web https://www.docker.com/get-started descargamos el cliente docker adecuado para nuestros SO, en nuestro caso el docker para Windows. Dentro de este cliente ya disponemos de docker-compose y todas las herramientas que necesitamos utilizar
+   ### Creación de DockerFiles
+   Para cada servicio creamos un fichero DockerFile que nos ayuda a crear automaticamente el contenedor con la imagen que queremos. Creamos uno para la aplicacion web, otro para el servicio interno y uno para cada haproxy.
+   ### Creacion y ejecucion del docker-compose
+   Para poder usar la funcionalidad del docker-compose, creamos un fichero llamado docker-compose.yml donde agupamos todas las imagenes y los nombres de los contenedores de los servicios que deseamos establecer con sus respectivas ip configuradas por nosotros. En nuestro caso disponemos de:
+   - 2 Aplicaciones Web
+   - 1 Servicio interno
+   - 1 Base de datos
+   - 2 Balanceadores de carga, uno para las aplicaicones web y otro para el servicio interno
+## 9. Videos de la Aplicacion
+ 
+   
+## 10. Integrantes
+   * Sergio Reinoso Barrios / s.reinosob@alumnos.urjc.es / https://github.com/reinosobs
+
+   * David Palacios Moreno / d.palaciosm@alumnos.urjc.es / https://github.com/d-palaciosm
+
+   * Luis Santos Moreno / l.santosmor@alumnos.urjc.es / https://github.com/LuisitoSantos
