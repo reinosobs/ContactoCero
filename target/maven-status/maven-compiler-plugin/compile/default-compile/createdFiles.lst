@@ -1,0 +1,14 @@
+es\urjc\etsii\dad\ContactoCero\CacheController.class
+es\urjc\etsii\dad\ContactoCero\Usuario.class
+es\urjc\etsii\dad\ContactoCero\WebController.class
+es\urjc\etsii\dad\ContactoCero\Rutina.class
+es\urjc\etsii\dad\ContactoCero\UserRepositoryAuthenticationProvider.class
+es\urjc\etsii\dad\ContactoCero\ContactoCeroWebApplication.class
+es\urjc\etsii\dad\ContactoCero\Dietas.class
+es\urjc\etsii\dad\ContactoCero\DatabaseUsersLoader.class
+es\urjc\etsii\dad\ContactoCero\Ejercicio.class
+es\urjc\etsii\dad\ContactoCero\SecurityConfiguration.class
+es\urjc\etsii\dad\ContactoCero\UsuarioRepositorio.class
+es\urjc\etsii\dad\ContactoCero\RutinaRepositorio.class
+es\urjc\etsii\dad\ContactoCero\EjercicioRepositorio.class
+es\urjc\etsii\dad\ContactoCero\DietasRepositorio.class
