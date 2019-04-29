@@ -43,23 +43,19 @@ services:
    # - "8080" # expose the port to other containers, but it's not exposed to the host
   environment:
    - SPRING_DATASOURCE_URL=jdbc:mysql://172.20.0.4:3306/BBDD?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   - SPRING.JPA.HIBERNATE.DDL-AUTO=none
    - SPRING.DATASOURCE.USERNAME=user
    - SPRING.DATASOURCE.PASSWORD=pass
 
  si1:
   build: ./serverinter
-  image: dad_serviciointerno
+  image: serviciointerno/servicio-interno
   container_name: si1
   networks:
    ccw_net:
     ipv4_address: 172.20.0.5
- si2:
-  build: ./serverinter
-  image: dad_serviciointerno
-  container_name: si2
-  networks:
-   ccw_net:
-    ipv4_address: 172.20.0.6
+  expose:
+   - "8080"
 
 
  proxyapp:

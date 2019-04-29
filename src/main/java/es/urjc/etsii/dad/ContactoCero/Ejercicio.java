@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Ejercicio {
 	
@@ -18,9 +20,12 @@ public class Ejercicio {
 	private String nombre;
 	private String musculo;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="ejercicio")
-	private List<Rutina> rutinas;
+	private List<Rutina> rutina;
 	
+	
+
 	protected Ejercicio() {}
 	
 	public Ejercicio(String nombre, String musculo) {
@@ -37,7 +42,14 @@ public class Ejercicio {
 		return musculo;
 	}
 
+	public List<Rutina> getRutina() {
+		return rutina;
+	}
 
+	public void setRutina(List<Rutina> rutina) {
+		this.rutina = rutina;
+	}
+	
 	@Override
 	public String toString() {
 		return "Ejercicio [nombre=" + nombre + ", musculo=" + musculo + "]";

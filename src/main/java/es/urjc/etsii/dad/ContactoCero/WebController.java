@@ -38,13 +38,16 @@ public class WebController implements CommandLineRunner {
 		model.put("name", name);
 		model.put("pass", pass);
 		if (name != null || pass != null && (usuarioRepositorio.findByNick(name)==null)) {
-			Usuario u = new Usuario(name, pass, correo, "USER");
+			Usuario u = new Usuario(name, pass, correo, "ROLE_USER");
 			usuarioRepositorio.save(u);
-			String url = "http://localhost:8080/envioCorreo?correo=" + correo + "&nombre=" + name;
+			
+			String url = "http://172.20.0.7:7000/envioCorreo?correo=" + correo + "&nombre=" + name;
+			
 			RestTemplate rt = new RestTemplate();
 			
 			Boolean b = rt.getForObject(url, Boolean.class);
-			return "mainPage";
+			System.out.println("todo enviado!");
+			return "login";
 		}
 		return "login";
 	}

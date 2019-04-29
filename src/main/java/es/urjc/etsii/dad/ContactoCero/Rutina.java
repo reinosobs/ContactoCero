@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Rutina {
 	@Id
@@ -17,23 +19,37 @@ public class Rutina {
 	private String rutina;
 	private String descripcion;
 	
-	@OneToMany(mappedBy= "rutinas")
-	private List<Ejercicio> usuarios;
+	@JsonIgnore
+	@OneToMany(mappedBy= "rutina")
+	private List<Usuario> usuarios;
 	
-	
-	public long getId() {
-		return id;
-	}
-
-
+	@JsonIgnore
 	@ManyToOne
 	private Ejercicio ejercicio;
+	
 	
 	protected Rutina() {}
 	
 	public Rutina(String rutina, String descripcion) {
 		this.rutina=rutina;
 		this.descripcion=descripcion;
+	}
+
+	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+	public Ejercicio getEjercicio() {
+		return ejercicio;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 	public String getRutina() {

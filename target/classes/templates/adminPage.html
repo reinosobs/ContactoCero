@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+			<title>Cabecera fija</title>
+				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" 
+				integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+				<link rel="stylesheet" href="/estilos/estilosAdminPage.css">
+	</head>
+	<body>
+		<header id="main-header">
+			<a id="logo-header" href="#"> <span class="site-name">ADMIN PAGE</span></a><!-- / #logo-header -->
+			<a id="logo-titulo" href="#"> <span class="titulo">Contacto Cero</span></a>
+			<nav>
+					<ul>						
+						<li><a href="mainPage" id="btnVolver">Volver<id="btn-dietas"  type="submit" value="Volver"></a></li>
+					</ul>
+				</nav>
+		</header>
+	</body>
+	
+	<main id="main-content">
+		<ul id="forma-ejercicios" href="#" class="image-list-small">
+			<section href="#" id="nuevoEjercicio">
+				{{#usuarios}}
+				<p>Nombre: {{nick}}</p>
+				<p>Correo: {{correo}}</p>
+				<section href="#" id="espacioBlanco">-</section>
+				{{/usuarios}}
+			</section>
+		</ul>
+	</main>
+</html>

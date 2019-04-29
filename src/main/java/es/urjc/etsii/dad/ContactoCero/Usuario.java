@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.context.annotation.SessionScope;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @SessionScope
 public class Usuario{
@@ -27,8 +29,13 @@ public class Usuario{
 	private String passwordHash;
 	private String correo;
 	
+	@JsonIgnore
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
+	
+	@JsonIgnore
+	@ManyToOne
+	private Rutina rutina;
 	
 	private static ArrayList<Usuario> lista_usuarios; 
 	
@@ -71,9 +78,7 @@ public class Usuario{
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
-    
-	@ManyToOne
-	private Rutina rutina; 
+
    
     public void setRutina(Rutina rut) {
     	this.rutina=rut;
